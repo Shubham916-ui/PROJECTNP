@@ -1,0 +1,23 @@
+{
+  "name": "project-np",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shubham916-ui/PROJECT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shubham916-ui/PROJECT/issues"
+  },
+  "homepage": "https://github.com/Shubham916-ui/PROJECT#readme",
+  "description": "",
+  "dependencies": {
+    "locomotive-scroll": "^5.0.1"
+  }
+}
