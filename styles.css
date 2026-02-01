@@ -450,6 +450,22 @@ body {
     gap: 2rem;
 }
 
+.category-card-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    display: block;
+}
+
+.category-card-link:hover {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.category-card-link h3,
+.category-card-link p {
+    color: inherit;
+}
+
 .category-card {
     background: var(--bg-white);
     padding: 2.5rem 2rem;
