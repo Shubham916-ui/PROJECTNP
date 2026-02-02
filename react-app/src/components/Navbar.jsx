@@ -1,11 +1,13 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useScrollEffect } from '../hooks/useScrollEffect';
 import { useMobileMenu } from '../hooks/useMobileMenu';
 
 const Navbar = () => {
+    const isScrolled = useScrollEffect();
     const { isOpen, toggle, close } = useMobileMenu();
 
     return (
-        <nav className="navbar" id="navbar">
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
             <div className="container nav-container">
                 <Link to="/" className="nav-brand">
                     <div className="logo">
