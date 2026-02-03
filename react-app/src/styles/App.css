@@ -17,9 +17,11 @@ html {
 
 body {
     overflow-x: hidden;
+    /* NOTE: body par perspective/transform se position:fixed break ho sakta hai */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* perspective/transform mat lagao body par - navbar fixed viewport ke saath kaam kare */
+    backface-visibility: visible;
+    perspective: none;
 }
 
 :root {
@@ -103,14 +105,13 @@ body {
    NAVIGATION
    ============================================ */
 
-/* Navbar hamesha upar dikhe - kitna bhi niche scroll karo */
 .navbar {
-    position: fixed;
+    position: fixed; /* scroll karo tab bhi top pe rahe */
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
@@ -118,9 +119,9 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
+/* fixed navbar ke niche content hide na ho */
 body {
     padding-top: 84px;
-    /* content navbar ke niche shuru ho */
 }
 
 .navbar.scrolled {
@@ -819,6 +820,8 @@ body {
    ============================================ */
 
 .footer {
+    /* section aur footer ke beech spacing */
+    margin-top: var(--spacing-lg);
     background: var(--bg-darker);
     color: var(--text-white);
     padding: var(--spacing-lg) 0 var(--spacing-md);
@@ -2135,42 +2138,9 @@ body {
     .page-title {
         font-size: 2.5rem;
     }
-
-    .product-image-large {
-        height: 300px;
-    }
-
-    .sustainability-content {
-        gap: 2rem;
-    }
 }
 
 @media (max-width: 768px) {
-
-    /* Container padding reduce karo mobile pe */
-    .container {
-        padding: 0 1rem;
-    }
-
-    /* Section spacing reduce karo */
-    .categories,
-    .featured-products,
-    .sustainability,
-    .cta,
-    .company-story,
-    .vision-mission,
-    .core-values,
-    .market-presence,
-    .quality-standards,
-    .product-catalog,
-    .flexo-printing,
-    .advantages,
-    .commitment,
-    .trust-indicators,
-    .customer-benefits,
-    .contact-section {
-        padding: 3rem 0;
-    }
 
     .advantages-grid,
     .benefits-grid,
@@ -2179,7 +2149,7 @@ body {
     }
 
     .contact-form-card {
-        padding: 1.5rem;
+        padding: 2rem;
     }
 
     .map-info {
@@ -2188,338 +2158,5 @@ body {
 
     .map-info h3 {
         font-size: 1.5rem;
-    }
-
-    /* Page header mobile friendly */
-    .page-header {
-        padding: 100px 0 60px;
-    }
-
-    .page-title {
-        font-size: 2rem;
-    }
-
-    .page-subtitle {
-        font-size: 1rem;
-    }
-
-    /* Story section mobile */
-    .story-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .story-text p {
-        font-size: 1rem;
-    }
-
-    /* Timeline mobile */
-    .timeline {
-        padding-left: 1.5rem;
-    }
-
-    .timeline-item {
-        padding-left: 1.5rem;
-    }
-
-    /* VM cards mobile */
-    .vm-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .vm-card h3 {
-        font-size: 1.5rem;
-    }
-
-    .vm-card p {
-        font-size: 1rem;
-    }
-
-    /* Value cards */
-    .value-card {
-        padding: 2rem 1.5rem;
-    }
-
-    /* Market segments */
-    .segment {
-        padding: 1.5rem;
-        gap: 1rem;
-    }
-
-    .segment-icon {
-        font-size: 2.5rem;
-    }
-
-    /* Product details mobile */
-    .product-detail-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .product-description {
-        font-size: 1rem;
-    }
-
-    .product-image-large {
-        height: 250px;
-    }
-
-    /* Flexo section */
-    .flexo-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .flexo-content>p {
-        font-size: 1rem;
-    }
-
-    /* Advantages cards */
-    .advantage-card,
-    .benefit-item {
-        padding: 2rem 1.5rem;
-    }
-
-    .advantage-icon,
-    .benefit-icon {
-        font-size: 3rem;
-    }
-
-    /* Commitment section */
-    .commitment-item {
-        padding: 1.5rem;
-        gap: 1rem;
-        flex-direction: column;
-    }
-
-    .commitment-number {
-        font-size: 2.5rem;
-    }
-
-    /* Trust cards */
-    .trust-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .trust-stat {
-        font-size: 2.5rem;
-    }
-
-    /* Contact page */
-    .contact-info h2 {
-        font-size: 1.8rem;
-    }
-
-    .contact-info>p {
-        font-size: 1rem;
-    }
-
-    .contact-method {
-        gap: 1rem;
-    }
-
-    .contact-form-card h3 {
-        font-size: 1.5rem;
-    }
-
-    /* Product cards */
-    .product-card {
-        margin: 0 auto;
-        max-width: 400px;
-    }
-
-    .product-image {
-        height: 200px;
-    }
-
-    /* Category cards */
-    .category-card {
-        padding: 2rem 1.5rem;
-    }
-
-    /* Section headers */
-    .section-header {
-        margin-bottom: 2.5rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-
-    /* Body padding for fixed navbar */
-    body {
-        padding-top: 75px;
-    }
-
-    /* Even smaller container padding */
-    .container {
-        padding: 0 0.75rem;
-    }
-
-    /* Hero adjustments */
-    .hero-title {
-        font-size: 1.75rem;
-        line-height: 1.3;
-    }
-
-    .hero-subtitle {
-        font-size: 0.95rem;
-    }
-
-    .hero-badge {
-        font-size: 0.75rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .stat-number {
-        font-size: 2.5rem;
-    }
-
-    .stat-label {
-        font-size: 0.85rem;
-    }
-
-    /* CTA section */
-    .cta-content h2 {
-        font-size: 1.5rem;
-    }
-
-    .cta-content p {
-        font-size: 1rem;
-    }
-
-    /* Page titles */
-    .page-title {
-        font-size: 1.75rem;
-    }
-
-    .page-subtitle {
-        font-size: 0.95rem;
-    }
-
-    /* Reduce all headings further */
-    .story-text h2,
-    .vm-card h3,
-    .product-detail-text h2,
-    .flexo-content h2,
-    .contact-info h2 {
-        font-size: 1.5rem;
-    }
-
-    .advantage-card h3,
-    .benefit-item h4,
-    .value-card h3 {
-        font-size: 1.2rem;
-    }
-
-    /* Icons smaller on tiny screens */
-    .category-icon,
-    .advantage-icon,
-    .benefit-icon,
-    .value-icon {
-        font-size: 2.5rem;
-    }
-
-    .vm-icon {
-        font-size: 3rem;
-    }
-
-    /* All cards less padding */
-    .vm-card,
-    .value-card,
-    .advantage-card,
-    .benefit-item,
-    .category-card,
-    .trust-card {
-        padding: 1.5rem 1rem;
-    }
-
-    /* Product cards full width on small phones */
-    .product-card {
-        max-width: 100%;
-    }
-
-    /* Contact form */
-    .contact-form-card {
-        padding: 1.25rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 0.85rem 1rem;
-        font-size: 0.95rem;
-    }
-
-    /* Buttons */
-    .btn {
-        padding: 0.85rem 2rem;
-        font-size: 0.95rem;
-    }
-
-    .btn-large {
-        padding: 1rem 2.5rem;
-        font-size: 1rem;
-    }
-
-    /* Footer adjustments */
-    .footer {
-        padding: 2.5rem 0 1.5rem;
-    }
-
-    .footer-grid {
-        gap: 2rem;
-    }
-
-    /* Image heights mobile friendly */
-    .product-image-large {
-        height: 200px;
-    }
-
-    .map-placeholder {
-        height: 300px;
-    }
-
-    .map-info {
-        padding: 1.5rem;
-    }
-
-    .map-info h3 {
-        font-size: 1.25rem;
-    }
-
-    /* Stats grid ko single column banao very small screens pe */
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    /* Circle graphic smaller */
-    .circle-graphic {
-        width: 250px;
-        height: 250px;
-    }
-
-    .sustainability-icon {
-        font-size: 3.5rem;
-    }
-
-    /* Timeline adjustments */
-    .timeline {
-        padding-left: 1rem;
-    }
-
-    .timeline-item {
-        padding-left: 1rem;
-    }
-
-    .timeline-item::before {
-        width: 12px;
-        height: 12px;
-        left: -1.5rem;
     }
 }

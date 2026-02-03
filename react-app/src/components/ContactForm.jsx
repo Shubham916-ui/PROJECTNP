@@ -52,6 +52,22 @@ const ContactForm = () => {
         }, 3000);
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            const formElements = Array.from(e.currentTarget.form.elements).filter(
+                el => el.type !== 'submit' && !el.disabled
+            );
+            const currentIndex = formElements.indexOf(e.target);
+
+            if (e.key === 'ArrowDown' && currentIndex < formElements.length - 1) {
+                formElements[currentIndex + 1].focus();
+            } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+                formElements[currentIndex - 1].focus();
+            }
+        }
+    };
+
     return (
         <>
             {notification && (
@@ -68,6 +84,7 @@ const ContactForm = () => {
                         id="name"
                         value={formData.name}
                         onChange={handleChange}
+                        onKeyDown={handleKeyDown}
                         placeholder="Enter your name"
                         required
                     />
@@ -79,6 +96,7 @@ const ContactForm = () => {
                         id="email"
                         value={formData.email}
                         onChange={handleChange}
+                        onKeyDown={handleKeyDown}
                         placeholder="your.email@example.com"
                         required
                     />
@@ -90,12 +108,13 @@ const ContactForm = () => {
                         id="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        onKeyDown={handleKeyDown}
                         placeholder="+977-XXX-XXXXXX"
                     />
                 </div>
                 <div className="form-group">
                     <label htmlFor="subject">Subject</label>
-                    <select id="subject" value={formData.subject} onChange={handleChange}>
+                    <select id="subject" value={formData.subject} onChange={handleChange} onKeyDown={handleKeyDown}>
                         <option value="general">General Inquiry</option>
                         <option value="quote">Request a Quote</option>
                         <option value="product">Product Information</option>
@@ -108,6 +127,7 @@ const ContactForm = () => {
                         id="message"
                         value={formData.message}
                         onChange={handleChange}
+                        onKeyDown={handleKeyDown}
                         rows="5"
                         placeholder="Write your message here..."
                         required

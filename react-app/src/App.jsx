@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -8,6 +8,17 @@ import Products from './pages/Products';
 import WhyUs from './pages/WhyUs';
 import Contact from './pages/Contact';
 import './styles/App.css';
+
+function ScrollToTop() {
+    const location = useLocation();
+
+    useEffect(() => {
+        // Har route change pe page top se open ho
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, [location.pathname]);
+
+    return null;
+}
 
 function App() {
     useEffect(() => {
@@ -25,6 +36,7 @@ function App() {
 
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
