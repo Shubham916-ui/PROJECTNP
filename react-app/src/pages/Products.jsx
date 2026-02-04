@@ -1,5 +1,6 @@
 import { products } from '../data/products';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { FaPrint, FaCheck } from 'react-icons/fa';
 
 const Products = () => {
     return (
@@ -26,24 +27,24 @@ const Products = () => {
             <section className="flexo-section">
                 <div className="container">
                     <div className="flexo-content">
-                        <div className="flexo-icon">🖨️</div>
+                        <div className="flexo-icon"><FaPrint /></div>
                         <h2 className="section-title">Flexographic Printing Services</h2>
                         <p>We offer custom flexographic printing on our plastic products, allowing you to add your brand logo, product information, and designs. Perfect for businesses looking to enhance their product packaging with professional branding.</p>
                         <div className="flexo-features">
                             <div className="flexo-feature">
-                                <span className="feature-icon">✓</span>
+                                <span className="feature-icon"><FaCheck /></span>
                                 <span>Multi-color printing</span>
                             </div>
                             <div className="flexo-feature">
-                                <span className="feature-icon">✓</span>
+                                <span className="feature-icon"><FaCheck /></span>
                                 <span>Custom designs</span>
                             </div>
                             <div className="flexo-feature">
-                                <span className="feature-icon">✓</span>
+                                <span className="feature-icon"><FaCheck /></span>
                                 <span>High-quality output</span>
                             </div>
                             <div className="flexo-feature">
-                                <span className="feature-icon">✓</span>
+                                <span className="feature-icon"><FaCheck /></span>
                                 <span>Bulk orders</span>
                             </div>
                         </div>
@@ -79,7 +80,7 @@ const ProductDetail = ({ id, name, badge, category, image, description, features
                         <h4>Key Features:</h4>
                         <ul>
                             {features.map((feature, idx) => (
-                                <li key={idx}>✓ {feature}</li>
+                                <li key={idx}><span className="feature-check"><FaCheck /></span> {feature}</li>
                             ))}
                         </ul>
                     </div>

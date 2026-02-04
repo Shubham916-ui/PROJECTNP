@@ -28,25 +28,25 @@ export const timeline = [
 export const coreValues = [
     {
         id: 1,
-        icon: '⭐',
+        icon: 'star',
         title: 'Quality Excellence',
         description: 'Committed to delivering products that exceed industry standards'
     },
     {
         id: 2,
-        icon: '🎯',
+        icon: 'target',
         title: 'Customer Focus',
         description: 'Understanding and fulfilling customer needs with tailored solutions'
     },
     {
         id: 3,
-        icon: '💡',
+        icon: 'lightbulb',
         title: 'Innovation',
         description: 'Continuously improving our processes and product offerings'
     },
     {
         id: 4,
-        icon: '🌱',
+        icon: 'seedling',
         title: 'Sustainability',
         description: 'Promoting responsible manufacturing and environmental stewardship'
     }
@@ -55,25 +55,25 @@ export const coreValues = [
 export const marketSegments = [
     {
         id: 1,
-        icon: '🏭',
+        icon: 'industry',
         title: 'Industrial Sector',
         description: 'HDPE pipes and industrial-grade plastic products'
     },
     {
         id: 2,
-        icon: '🌾',
+        icon: 'wheat',
         title: 'Agriculture',
         description: 'Mulch films, grow bags, and nursery products'
     },
     {
         id: 3,
-        icon: '📦',
+        icon: 'box',
         title: 'Packaging Industry',
         description: 'Comprehensive packaging solutions for businesses'
     },
     {
         id: 4,
-        icon: '🏘️',
+        icon: 'home',
         title: 'Consumer Market',
         description: 'Household products and sanitation solutions'
     }

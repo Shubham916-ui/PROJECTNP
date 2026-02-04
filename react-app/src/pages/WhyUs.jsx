@@ -1,5 +1,17 @@
 import { advantages, benefits, trustFactors } from '../data/advantages';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import {
+    FaTrophy,
+    FaBolt,
+    FaCheckCircle,
+    FaPalette,
+    FaCoins,
+    FaTruck,
+    FaBoxOpen,
+    FaBullseye,
+    FaSeedling,
+    FaSmile
+} from 'react-icons/fa';
 
 const WhyUs = () => {
     return (
@@ -57,18 +69,30 @@ const WhyUs = () => {
     );
 };
 
+// Map string keys to components
+const iconMap = {
+    'trophy': <FaTrophy />,
+    'bolt': <FaBolt />,
+    'check': <FaCheckCircle />,
+    'palette': <FaPalette />,
+    'coins': <FaCoins />,
+    'truck': <FaTruck />
+};
+
 // Benefit icons mapping
 const benefitIcons = {
-    '01': '📦',
-    '02': '✅',
-    '03': '🎯',
-    '04': '💰',
-    '05': '🌱',
-    '06': '😊'
+    '01': <FaBoxOpen />,
+    '02': <FaCheckCircle />,
+    '03': <FaBullseye />,
+    '04': <FaCoins />,
+    '05': <FaSeedling />,
+    '06': <FaSmile />
 };
 
 const AdvantageCard = ({ icon, title, description }) => {
     const [ref, isVisible] = useScrollAnimation();
+    // Get the icon component from the map using the string key
+    const iconComponent = iconMap[icon] || <FaTrophy />;
 
     return (
         <div
@@ -80,7 +104,7 @@ const AdvantageCard = ({ icon, title, description }) => {
                 transition: 'opacity 0.6s ease, transform 0.6s ease'
             }}
         >
-            <div className="advantage-icon">{icon}</div>
+            <div className="advantage-icon">{iconComponent}</div>
             <h3>{title}</h3>
             <p>{description}</p>
         </div>
@@ -108,7 +132,7 @@ const TrustCard = ({ stat, label }) => {
 
 const BenefitItem = ({ number, title, description }) => {
     const [ref, isVisible] = useScrollAnimation();
-    const icon = benefitIcons[number] || '✨';
+    const icon = benefitIcons[number] || <FaBolt />;
 
     return (
         <div

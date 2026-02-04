@@ -1,5 +1,15 @@
 import { timeline, coreValues, marketSegments } from '../data/timeline';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import {
+    FaStar,
+    FaBullseye,
+    FaLightbulb,
+    FaSeedling,
+    FaIndustry,
+    FaLeaf,
+    FaBoxOpen,
+    FaHome
+} from 'react-icons/fa';
 
 const About = () => {
     return (
@@ -143,6 +153,21 @@ const About = () => {
     );
 };
 
+// Maps for icons
+const valueIconMap = {
+    'star': <FaStar />,
+    'target': <FaBullseye />,
+    'lightbulb': <FaLightbulb />,
+    'seedling': <FaSeedling />
+};
+
+const segmentIconMap = {
+    'industry': <FaIndustry />,
+    'wheat': <FaLeaf />,
+    'box': <FaBoxOpen />,
+    'home': <FaHome />
+};
+
 const TimelineItem = ({ year, title, description, index }) => {
     const [ref, isVisible] = useScrollAnimation();
 
@@ -187,6 +212,7 @@ const VMCard = ({ icon, title, content }) => {
 
 const ValueCard = ({ icon, title, description }) => {
     const [ref, isVisible] = useScrollAnimation();
+    const iconComponent = valueIconMap[icon] || <FaStar />;
 
     return (
         <div
@@ -198,7 +224,7 @@ const ValueCard = ({ icon, title, description }) => {
                 transition: 'opacity 0.6s ease, transform 0.6s ease'
             }}
         >
-            <div className="value-icon">{icon}</div>
+            <div className="value-icon">{iconComponent}</div>
             <h3>{title}</h3>
             <p>{description}</p>
         </div>
@@ -207,6 +233,7 @@ const ValueCard = ({ icon, title, description }) => {
 
 const SegmentCard = ({ icon, title, description }) => {
     const [ref, isVisible] = useScrollAnimation();
+    const iconComponent = segmentIconMap[icon] || <FaIndustry />;
 
     return (
         <div
@@ -218,7 +245,7 @@ const SegmentCard = ({ icon, title, description }) => {
                 transition: 'opacity 0.6s ease, transform 0.6s ease'
             }}
         >
-            <div className="segment-icon">{icon}</div>
+            <div className="segment-icon">{iconComponent}</div>
             <div className="segment-content">
                 <h4>{title}</h4>
                 <p>{description}</p>

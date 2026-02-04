@@ -5,6 +5,7 @@ import ProductCard from '../components/ProductCard';
 import { categories } from '../data/categories.jsx';
 import { featuredProducts } from '../data/products';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { FaRecycle, FaSeedling, FaShieldAlt, FaGlobeAmericas, FaLeaf } from 'react-icons/fa';
 
 const Home = () => {
     return (
@@ -52,10 +53,10 @@ const Home = () => {
                             <h2>Our Commitment to Sustainability</h2>
                             <p>At SHREE SHYAM POLYMERS, we believe in responsible manufacturing. We actively promote recycling awareness, create durable products that reduce waste, and balance industrial growth with environmental responsibility.</p>
                             <ul className="sustainability-list">
-                                <li>♻️ Promoting responsible plastic usage</li>
-                                <li>🌱 Supporting recycling initiatives</li>
-                                <li>💪 Manufacturing durable, long-lasting products</li>
-                                <li>🌍 Committed to environmental responsibility</li>
+                                <li><FaRecycle className="list-icon" /> Promoting responsible plastic usage</li>
+                                <li><FaSeedling className="list-icon" /> Supporting recycling initiatives</li>
+                                <li><FaShieldAlt className="list-icon" /> Manufacturing durable, long-lasting products</li>
+                                <li><FaGlobeAmericas className="list-icon" /> Committed to environmental responsibility</li>
                             </ul>
                         </div>
                         <div className="sustainability-visual">
@@ -63,7 +64,7 @@ const Home = () => {
                                 <div className="circle circle-outer"></div>
                                 <div className="circle circle-middle"></div>
                                 <div className="circle circle-inner"></div>
-                                <div className="sustainability-icon">🌿</div>
+                                <div className="sustainability-icon"><FaLeaf /></div>
                             </div>
                         </div>
                     </div>

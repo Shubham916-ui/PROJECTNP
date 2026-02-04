@@ -1,6 +1,8 @@
 import ContactForm from '../components/ContactForm';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa';
+
 const Contact = () => {
     return (
         <>
@@ -27,22 +29,22 @@ const Contact = () => {
                             <h2>Contact Information</h2>
                             <div className="contact-methods">
                                 <ContactMethod
-                                    icon="📍"
+                                    icon={<FaMapMarkerAlt />}
                                     title="Our Location"
                                     content={<>Omsatiya-2, (Padsari)<br />Bhairahawa, Nepal</>}
                                 />
                                 <ContactMethod
-                                    icon="📞"
+                                    icon={<FaPhoneAlt />}
                                     title="Phone"
                                     content="071 421042"
                                 />
                                 <ContactMethod
-                                    icon="✉️"
+                                    icon={<FaEnvelope />}
                                     title="Email"
                                     content="shyampolynepal@gmail.com"
                                 />
                                 <ContactMethod
-                                    icon="⏰"
+                                    icon={<FaClock />}
                                     title="Business Hours"
                                     content="Monday - Saturday: 9:00 AM - 6:00 PM"
                                 />

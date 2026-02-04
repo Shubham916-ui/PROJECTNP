@@ -1,37 +1,37 @@
 export const advantages = [
     {
         id: 1,
-        icon: '🏆',
+        icon: 'trophy',
         title: 'Industry Expertise',
         description: '20+ years of experience in plastic manufacturing with proven track record across Nepal'
     },
     {
         id: 2,
-        icon: '⚡',
+        icon: 'bolt',
         title: 'Advanced Technology',
         description: 'State-of-the-art manufacturing equipment ensuring consistent quality and efficiency'
     },
     {
         id: 3,
-        icon: '✅',
+        icon: 'check',
         title: 'Quality Assurance',
         description: 'Rigorous quality control at every stage from raw materials to finished products'
     },
     {
         id: 4,
-        icon: '🎨',
+        icon: 'palette',
         title: 'Custom Solutions',
         description: 'Tailored products and flexible manufacturing to meet specific client requirements'
     },
     {
         id: 5,
-        icon: '💰',
+        icon: 'coins',
         title: 'Competitive Pricing',
         description: 'Best value for money with no compromise on quality or service standards'
     },
     {
         id: 6,
-        icon: '🚚',
+        icon: 'truck',
         title: 'Pan-Nepal Delivery',
         description: 'Reliable and timely delivery network covering all regions of Nepal'
     }
