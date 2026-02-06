@@ -1,7 +1,10 @@
 import ContactForm from '../components/ContactForm';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa';
+import locationIcon from '../assets/Icons/Contact-icons/location_1819846.png';
+import phoneIcon from '../assets/Icons/Contact-icons/telephone_171548.png';
+import emailIcon from '../assets/Icons/Contact-icons/email_238842.png';
+import clockIcon from '../assets/Icons/Contact-icons/clock_281699.png';
 
 const Contact = () => {
     return (
@@ -29,22 +32,22 @@ const Contact = () => {
                             <h2>Contact Information</h2>
                             <div className="contact-methods">
                                 <ContactMethod
-                                    icon={<FaMapMarkerAlt />}
+                                    icon={<img src={locationIcon} alt="Location" className="contact-page-icon" />}
                                     title="Our Location"
                                     content={<>Omsatiya-2, (Padsari)<br />Bhairahawa, Nepal</>}
                                 />
                                 <ContactMethod
-                                    icon={<FaPhoneAlt />}
+                                    icon={<img src={phoneIcon} alt="Phone" className="contact-page-icon" />}
                                     title="Phone"
                                     content="071 421042"
                                 />
                                 <ContactMethod
-                                    icon={<FaEnvelope />}
+                                    icon={<img src={emailIcon} alt="Email" className="contact-page-icon" />}
                                     title="Email"
                                     content="shyampolynepal@gmail.com"
                                 />
                                 <ContactMethod
-                                    icon={<FaClock />}
+                                    icon={<img src={clockIcon} alt="Clock" className="contact-page-icon" />}
                                     title="Business Hours"
                                     content="Monday - Saturday: 9:00 AM - 6:00 PM"
                                 />

@@ -109,7 +109,7 @@ export const products = [
         name: 'Mulch Films',
         badge: 'Eco-Friendly',
         category: 'Agriculture',
-        image: '/photos/mulch-films.png',
+        image: '/photos/product-images/mulch-films.png?v=fixed',
         description: 'Agricultural films to retain moisture, control weeds, and improve crop yield.',
         features: [
             'UV stabilized',
@@ -172,7 +172,7 @@ export const products = [
         name: 'Disposable Cutlery',
         badge: 'Convenient',
         category: 'Consumer',
-        image: '/photos/polythene-bags.png',
+        image: '/photos/product-images/disposable-cutlery.jpg',
         description: 'Food-grade disposable plastic cutlery for events and daily use.',
         features: [
             'Food-grade plastic',
