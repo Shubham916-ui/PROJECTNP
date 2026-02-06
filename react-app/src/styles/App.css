@@ -106,7 +106,8 @@ body {
    ============================================ */
 
 .navbar {
-    position: fixed; /* scroll karo tab bhi top pe rahe */
+    position: fixed;
+    /* scroll karo tab bhi top pe rahe */
     top: 0;
     left: 0;
     right: 0;
@@ -765,6 +766,14 @@ body {
     animation: rotate 20s linear infinite;
 }
 
+.sustainability-logo {
+    width: 120px;
+    height: auto;
+    z-index: 10;
+    object-fit: contain;
+    animation: rotate 15s linear infinite;
+}
+
 @keyframes pulse {
 
     0%,
@@ -890,7 +899,29 @@ body {
     color: var(--text-light);
     margin-bottom: 1rem;
     line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
 }
+
+.footer-icon {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.8rem;
+    vertical-align: middle;
+    background-color: #14b8a6;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    position: relative;
+    top: 5px;
+}
+
+
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);

@@ -2,6 +2,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { useScrollEffect } from '../hooks/useScrollEffect';
 import { useMobileMenu } from '../hooks/useMobileMenu';
 
+import logo from '../assets/Icons/logo-new.png';
+
 const Navbar = () => {
     const isScrolled = useScrollEffect();
     const { isOpen, toggle, close } = useMobileMenu();
@@ -11,7 +13,7 @@ const Navbar = () => {
             <div className="container nav-container">
                 <Link to="/" className="nav-brand">
                     <div className="logo">
-                        <img src="/logo/logo-new-2024.png" alt="SHREE SHYAM POLYMERS" width="80" height="80" style={{ objectFit: 'contain' }} />
+                        <img src={logo} alt="SHREE SHYAM POLYMERS" width="80" height="80" style={{ objectFit: 'contain' }} />
                     </div>
                     <div className="brand-text">
                         <span className="brand-name">SHREE SHYAM</span>

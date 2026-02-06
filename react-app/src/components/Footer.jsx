@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import locationIcon from '../assets/Icons/location_1819846.png';
+import phoneIcon from '../assets/Icons/telephone_171548.png';
+import emailIcon from '../assets/Icons/email_238842.png';
 
 const Footer = () => {
     return (
@@ -30,15 +33,24 @@ const Footer = () => {
                             <li><Link to="/products#hdpe-pipes">HDPE Pipes</Link></li>
                             <li><Link to="/products#garbage-bags">Garbage Bags</Link></li>
                             <li><Link to="/products#mulch-films">Mulch Films</Link></li>
-                            <li><Link to="/products#grow-bags">Grow Bags</Link></li>
+                            <li><Link to="/products#grow-bags">Grow Bag</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">
                         <h4>Contact Info</h4>
                         <ul className="footer-contact">
-                            <li>📍 Omsatiya-2, (Padsari)<br />Bhairahawa, Nepal</li>
-                            <li>📞 071 421042</li>
-                            <li>✉️ shyampolynepal@gmail.com</li>
+                            <li>
+                                <span style={{ WebkitMaskImage: `url(${locationIcon})`, maskImage: `url(${locationIcon})` }} className="footer-icon"></span>
+                                <div>Omsatiya-2, (Padsari)  <br />bhairahawa, Nepal</div>
+                            </li>
+                            <li>
+                                <span style={{ WebkitMaskImage: `url(${phoneIcon})`, maskImage: `url(${phoneIcon})` }} className="footer-icon"></span>
+                                <span>071 421042</span>
+                            </li>
+                            <li>
+                                <span style={{ WebkitMaskImage: `url(${emailIcon})`, maskImage: `url(${emailIcon})` }} className="footer-icon"></span>
+                                <span>shyampolynepal@gmail.com</span>
+                            </li>
                         </ul>
                     </div>
                 </div>

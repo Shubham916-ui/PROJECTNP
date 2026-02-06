@@ -5,7 +5,8 @@ import ProductCard from '../components/ProductCard';
 import { categories } from '../data/categories.jsx';
 import { featuredProducts } from '../data/products';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { FaRecycle, FaSeedling, FaShieldAlt, FaGlobeAmericas, FaLeaf } from 'react-icons/fa';
+import { FaRecycle, FaSeedling, FaShieldAlt, FaGlobeAmericas } from 'react-icons/fa';
+import logo from '../assets/Icons/logo-new-2024.png';
 
 const Home = () => {
     return (
@@ -64,7 +65,7 @@ const Home = () => {
                                 <div className="circle circle-outer"></div>
                                 <div className="circle circle-middle"></div>
                                 <div className="circle circle-inner"></div>
-                                <div className="sustainability-icon"><FaLeaf /></div>
+                                <img src={logo} alt="Shree Shyam Polymers" className="sustainability-logo" />
                             </div>
                         </div>
                     </div>
