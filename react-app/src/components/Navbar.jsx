@@ -21,11 +21,46 @@ const Navbar = () => {
                     </div>
                 </Link>
                 <ul className={`nav-menu ${isOpen ? 'active' : ''}`} id="navMenu">
-                    <li><NavLink to="/" className="nav-link" onClick={close}>HOME</NavLink></li>
-                    <li><NavLink to="/about" className="nav-link" onClick={close}>ABOUT</NavLink></li>
-                    <li><NavLink to="/products" className="nav-link" onClick={close}>PRODUCTS</NavLink></li>
-                    <li><NavLink to="/why-us" className="nav-link" onClick={close}>WHY US</NavLink></li>
-                    <li><NavLink to="/contact" className="nav-link" onClick={close}>CONTACT</NavLink></li>
+                    <li>
+                        <NavLink to="/" className="nav-link" onClick={close}>
+                            <span className="nav-link-inner">
+                                <span className="nav-text-main">HOME</span>
+                                <span className="nav-text-hover">HOME</span>
+                            </span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/about" className="nav-link" onClick={close}>
+                            <span className="nav-link-inner">
+                                <span className="nav-text-main">ABOUT</span>
+                                <span className="nav-text-hover">ABOUT</span>
+                            </span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/products" className="nav-link" onClick={close}>
+                            <span className="nav-link-inner">
+                                <span className="nav-text-main">PRODUCTS</span>
+                                <span className="nav-text-hover">PRODUCTS</span>
+                            </span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/why-us" className="nav-link" onClick={close}>
+                            <span className="nav-link-inner">
+                                <span className="nav-text-main">WHY US</span>
+                                <span className="nav-text-hover">WHY US</span>
+                            </span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/contact" className="nav-link" onClick={close}>
+                            <span className="nav-link-inner">
+                                <span className="nav-text-main">CONTACT</span>
+                                <span className="nav-text-hover">CONTACT</span>
+                            </span>
+                        </NavLink>
+                    </li>
                 </ul>
                 <div className={`hamburger ${isOpen ? 'active' : ''}`} id="hamburger" onClick={toggle}>
                     <span></span>

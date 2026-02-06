@@ -192,28 +192,59 @@ body {
     letter-spacing: 0.5px;
     padding: 0.5rem 0;
     position: relative;
-    transition: var(--transition-normal);
+    display: inline-block;
+    vertical-align: middle;
+    /* overflow: hidden;  <-- REMOVED from here to fix padding leak */
 }
 
-.nav-link::after {
-    content: '';
+/* Inner wrapper to hold both spans and mask the content */
+.nav-link-inner {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    /* <-- MOVED here to mask text correctly */
+    line-height: 1.5;
+    /* Ensure consistent line height */
+    transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+/* Main text (initially visible) */
+.nav-text-main {
+    display: block;
+    transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+/* Hover text (initially hidden below) */
+.nav-text-hover {
     position: absolute;
-    bottom: 0;
+    top: 100%;
     left: 0;
-    width: 0;
-    height: 3px;
-    background: var(--gradient-primary);
-    transition: var(--transition-normal);
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--primary-orange);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
     width: 100%;
+    color: var(--primary-orange);
+    transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+/* Active State - Base style for current page (Normal appearance as requested) */
+.nav-link.active .nav-text-main {
+    color: var(--text-primary);
+    /* Reset to default text color */
+    transform: translateY(0);
+    /* Reset to default position */
+}
+
+.nav-link.active .nav-text-hover {
+    transform: translateY(0);
+}
+
+/* Hover State - Triggers animation (Must come AFTER active to override it) */
+.nav-link:hover .nav-text-main,
+.nav-link.active:hover .nav-text-main {
+    transform: translateY(-100%);
+}
+
+.nav-link:hover .nav-text-hover,
+.nav-link.active:hover .nav-text-hover {
+    transform: translateY(-100%);
 }
 
 .hamburger {
