@@ -2,7 +2,7 @@ export const categories = [
     {
         id: 1,
         name: 'Agriculture',
-        description: 'Mulch films, grow bags, and nursery bags for modern farming',
+        description: 'Mulch films & nursery bags',
         icon: (
             <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                 <rect width="60" height="60" rx="12" fill="url(#cat1)" />
@@ -21,7 +21,7 @@ export const categories = [
     {
         id: 2,
         name: 'Packaging',
-        description: 'Shrink films, polythene bags, and clear LD pouches',
+        description: 'Shrink films & LD pouches',
         icon: (
             <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                 <rect width="60" height="60" rx="12" fill="url(#cat2)" />
@@ -40,7 +40,7 @@ export const categories = [
     {
         id: 3,
         name: 'Sanitation',
-        description: 'Durable garbage bags for hygienic waste management',
+        description: 'Garbage bags for waste',
         icon: (
             <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                 <rect width="60" height="60" rx="12" fill="url(#cat3)" />
@@ -59,7 +59,7 @@ export const categories = [
     {
         id: 4,
         name: 'Industrial',
-        description: 'Black HDPE pipes for water supply and irrigation',
+        description: 'HDPE pipes for water',
         icon: (
             <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                 <rect width="60" height="60" rx="12" fill="url(#cat4)" />
