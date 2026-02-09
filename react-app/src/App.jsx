@@ -5,8 +5,10 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
+import ProductDetails from './pages/ProductDetails';
 import WhyUs from './pages/WhyUs';
 import Contact from './pages/Contact';
+import { ThemeProvider } from './context/ThemeContext';
 import './styles/App.css';
 
 function ScrollToTop() {
@@ -35,18 +37,21 @@ function App() {
     }, []);
 
     return (
-        <BrowserRouter>
-            <ScrollToTop />
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/why-us" element={<WhyUs />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
-            <Footer />
-        </BrowserRouter>
+        <ThemeProvider>
+            <BrowserRouter>
+                <ScrollToTop />
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/products" element={<Products />} />
+                    <Route path="/why-us" element={<WhyUs />} />
+                    <Route path="/product/:id" element={<ProductDetails />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </ThemeProvider>
     );
 }
 

@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useScrollEffect } from '../hooks/useScrollEffect';
 import { useMobileMenu } from '../hooks/useMobileMenu';
+import ThemeToggle from './ThemeToggle';
 
 import logo from '../assets/Icons/logo-new.png';
 
@@ -62,6 +63,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                 </ul>
+                <ThemeToggle />
                 <div className={`hamburger ${isOpen ? 'active' : ''}`} id="hamburger" onClick={toggle}>
                     <span></span>
                     <span></span>
