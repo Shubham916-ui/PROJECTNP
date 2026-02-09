@@ -2662,28 +2662,23 @@ body.dark-mode .contact-page-icon {
 .view-details-btn {
     margin-top: auto;
     width: fit-content;
-    /* Reduced from 100% */
     padding: 0.5rem 1.2rem;
-    /* reduced veritcal, added horizontal */
-    background: var(--primary-orange);
-    color: white;
+    background: #FF6B35 !important;
+    color: white !important;
     border: none;
     border-radius: 8px;
-    /* reduced from 12px for better proportion */
     font-size: 0.8rem;
-    /* reduced from 0.9rem */
     font-weight: 500;
-    /* slightly lighter weight */
     cursor: pointer;
     transition: background 0.2s;
     box-shadow: 0 2px 6px rgba(255, 107, 53, 0.2);
-    /* softer shadow */
     align-self: center;
-    /* Center align within flex column */
+    text-decoration: none !important;
+    display: inline-block;
 }
 
 .view-details-btn:active {
-    background: var(--dark-orange);
+    background: var(--dark-orange) !important;
     transform: translateY(1px);
 }
 
