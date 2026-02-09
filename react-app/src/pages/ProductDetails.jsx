@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products';
-import { FaArrowLeft, FaCheck, FaFilePdf } from 'react-icons/fa';
+import { FaArrowLeft, FaCheck } from 'react-icons/fa';
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -103,13 +103,6 @@ const ProductDetails = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            {/* Bottom Floating CTA */}
-            <div className="details-cta-bar">
-                <Link to="/contact" className="request-quote-btn">
-                    <FaFilePdf /> Request a Quote
-                </Link>
             </div>
         </div>
     );

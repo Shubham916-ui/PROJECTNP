@@ -2769,37 +2769,7 @@ body {
     text-align: right;
 }
 
-.details-cta-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: white;
-    padding: 1rem 1.5rem;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-}
-
-.request-quote-btn {
-    display: flex;
-    /* Flex to align icon */
-    align-items: center;
-    /* Center icon vertically */
-    justify-content: center;
-    /* Center text horizontally */
-    gap: 0.5rem;
-    /* Space between icon and text */
-    width: 100%;
-    background: var(--gradient-primary);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 12px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-}
+/* Bottom CTA Bar - REMOVED */
 
 /* Desktop styles */
 @media (min-width: 768px) {
@@ -2830,18 +2800,7 @@ body {
         background: transparent;
     }
 
-    .details-cta-bar {
-        position: static;
-        background: transparent;
-        padding: 0;
-        box-shadow: none;
-        margin-top: 2rem;
-    }
-
-    .request-quote-btn {
-        width: fit-content;
-        padding: 1rem 3rem;
-    }
+    /* .details-cta-bar styles removed */
 }
 
 /* ============================================
