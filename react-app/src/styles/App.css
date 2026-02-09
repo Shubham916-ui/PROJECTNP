@@ -10,6 +10,18 @@
     box-sizing: border-box;
 }
 
+/* Remove default focus outline */
+*:focus {
+    outline: none;
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -1987,6 +1999,11 @@ body {
     width: 24px;
     height: 24px;
     object-fit: contain;
+    transition: var(--transition-normal);
+}
+
+body.dark-mode .contact-page-icon {
+    filter: brightness(0) invert(1);
 }
 
 .trust-indicators {
@@ -2969,7 +2986,6 @@ body.dark-mode textarea:focus {
 body.dark-mode .contact-card,
 body.dark-mode .feature-card,
 body.dark-mode .catalog-card,
-body.dark-mode .stat-item,
 body.dark-mode .details-content {
     background: var(--bg-white);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
