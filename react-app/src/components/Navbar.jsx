@@ -22,6 +22,9 @@ const Navbar = () => {
                     </div>
                 </Link>
                 <ul className={`nav-menu ${isOpen ? 'active' : ''}`} id="navMenu">
+                    <li className="nav-toggle-item">
+                        <ThemeToggle />
+                    </li>
                     <li>
                         <NavLink to="/" className="nav-link" onClick={close}>
                             <span className="nav-link-inner">
@@ -63,13 +66,14 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                 </ul>
-                <ThemeToggle />
                 <div className={`hamburger ${isOpen ? 'active' : ''}`} id="hamburger" onClick={toggle}>
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
+            {/* Overlay backdrop for mobile menu */}
+            {isOpen && <div className="nav-overlay" onClick={close}></div>}
         </nav>
     );
 };
