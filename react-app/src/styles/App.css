@@ -265,6 +265,48 @@ body {
     transform: translateY(-100%);
 }
 
+/* Contact Button Styling */
+.nav-link.contact-btn {
+    background: var(--gradient-primary);
+    color: white !important;
+    padding: 0.6rem 1.8rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link.contact-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+}
+
+/* Disable default text slide animation for button */
+.nav-link.contact-btn .nav-link-inner {
+    transform: none !important;
+}
+
+.nav-link.contact-btn .nav-text-main {
+    transform: none !important;
+    color: white !important;
+}
+
+.nav-link.contact-btn .nav-text-hover {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-link.contact-btn {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 .hamburger {
     display: none;
     flex-direction: column;

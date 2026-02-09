@@ -58,7 +58,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contact" className="nav-link" onClick={close}>
+                        <NavLink to="/contact" className="nav-link contact-btn" onClick={close}>
                             <span className="nav-link-inner">
                                 <span className="nav-text-main">CONTACT</span>
                                 <span className="nav-text-hover">CONTACT</span>
