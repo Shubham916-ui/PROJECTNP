@@ -153,7 +153,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem var(--spacing-md);
+    padding: 0.75rem 2rem;
+    max-width: 95% !important;
+    /* Allowing more width than standard container */
+    margin: 0 auto;
 }
 
 .logo {
@@ -1151,6 +1154,12 @@ body {
 }
 
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 0.75rem 1rem !important;
+        /* Reduced padding for mobile to push elements to edges */
+        max-width: 100% !important;
+    }
+
     .nav-menu {
         position: fixed;
         top: 80px;
