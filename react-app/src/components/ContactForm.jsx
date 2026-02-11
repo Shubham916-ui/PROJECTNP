@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { submitContactForm } from '../services/sheetDb';
+import Modal from './Modal';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -8,6 +9,13 @@ const ContactForm = () => {
         phone: '',
         subject: 'general',
         message: ''
+    });
+
+    const [modalConfig, setModalConfig] = useState({
+        isOpen: false,
+        title: '',
+        message: '',
+        type: 'success'
     });
 
     const [notification, setNotification] = useState(null);
@@ -40,7 +48,14 @@ const ContactForm = () => {
 
         try {
             await submitContactForm(formData);
-            showNotification('Message sent successfully!', 'success');
+            // Show success modal
+            setModalConfig({
+                isOpen: true,
+                title: 'Success!',
+                message: 'Your message has been sent successfully. We will get back to you shortly.',
+                type: 'success'
+            });
+
             setFormData({
                 name: '',
                 email: '',
@@ -48,18 +63,35 @@ const ContactForm = () => {
                 subject: 'general',
                 message: ''
             });
+
+            // Auto close after 5 seconds if user doesn't close
+            // setTimeout(() => {
+            //     closeModal();
+            // }, 5000);
+
         } catch (error) {
-            showNotification('Something went wrong. Please try again later.', 'error');
+            // Show error modal
+            setModalConfig({
+                isOpen: true,
+                title: 'Error',
+                message: 'Something went wrong. Please try again later.',
+                type: 'error'
+            });
         } finally {
             setIsSubmitting(false);
         }
     };
 
     const showNotification = (message, type) => {
+        // Fallback for validation errors or existing notifications
         setNotification({ message, type });
         setTimeout(() => {
             setNotification(null);
         }, 5000);
+    };
+
+    const closeModal = () => {
+        setModalConfig(prev => ({ ...prev, isOpen: false }));
     };
 
     const handleKeyDown = (e) => {
@@ -86,6 +118,14 @@ const ContactForm = () => {
                     {notification.message}
                 </div>
             )}
+
+            <Modal
+                isOpen={modalConfig.isOpen}
+                onClose={closeModal}
+                title={modalConfig.title}
+                message={modalConfig.message}
+                type={modalConfig.type}
+            />
 
             <form className="contact-form" id="contactForm" onSubmit={handleSubmit}>
                 <div className="form-group">
