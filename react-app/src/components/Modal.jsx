@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-const Modal = ({ isOpen, onClose, title, message, type = 'success' }) => {
+const Modal = ({ isOpen, onClose, title, message, type = 'success', showCloseButton = true, showFooter = true }) => {
 
     // Close on Escape key
     useEffect(() => {
         const handleEscape = (e) => {
-            if (e.key === 'Escape') {
+            if (e.key === 'Escape' && showCloseButton) {
                 onClose();
             }
         };
@@ -21,12 +21,12 @@ const Modal = ({ isOpen, onClose, title, message, type = 'success' }) => {
             document.removeEventListener('keydown', handleEscape);
             document.body.style.overflow = 'unset';
         };
-    }, [isOpen, onClose]);
+    }, [isOpen, onClose, showCloseButton]);
 
     if (!isOpen) return null;
 
     return createPortal(
-        <div className="modal-overlay" onClick={onClose}>
+        <div className="modal-overlay" onClick={showCloseButton ? onClose : undefined}>
             <div
                 className={`modal-content modal-${type}`}
                 onClick={e => e.stopPropagation()}
@@ -34,9 +34,11 @@ const Modal = ({ isOpen, onClose, title, message, type = 'success' }) => {
                 aria-modal="true"
                 aria-labelledby="modal-title"
             >
-                <button className="modal-close" onClick={onClose} aria-label="Close">
-                    &times;
-                </button>
+                {showCloseButton && (
+                    <button className="modal-close" onClick={onClose} aria-label="Close">
+                        &times;
+                    </button>
+                )}
 
                 <div className="modal-header">
                     {type === 'success' && (
@@ -60,11 +62,13 @@ const Modal = ({ isOpen, onClose, title, message, type = 'success' }) => {
                     <p>{message}</p>
                 </div>
 
-                <div className="modal-footer">
-                    <button className="btn btn-primary" onClick={onClose}>
-                        Close
-                    </button>
-                </div>
+                {showFooter && (
+                    <div className="modal-footer">
+                        <button className="btn btn-primary" onClick={onClose}>
+                            Close
+                        </button>
+                    </div>
+                )}
             </div>
         </div>,
         document.body

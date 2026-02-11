@@ -16,7 +16,6 @@ const Hero = () => {
                 <p className="hero-subtitle">Innovating Sustainability. Manufacturing Excellence. Building Trust.</p>
                 <div className="hero-buttons">
                     <Link to="/products" className="btn btn-primary">Explore Products</Link>
-                    <Link to="/contact" className="btn btn-secondary">Get In Touch</Link>
                 </div>
             </div>
             <div className="hero-floating-shapes">

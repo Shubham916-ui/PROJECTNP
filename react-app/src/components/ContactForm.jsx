@@ -64,10 +64,10 @@ const ContactForm = () => {
                 message: ''
             });
 
-            // Auto close after 5 seconds if user doesn't close
-            // setTimeout(() => {
-            //     closeModal();
-            // }, 5000);
+            // Auto close after 2 seconds
+            setTimeout(() => {
+                closeModal();
+            }, 2000);
 
         } catch (error) {
             // Show error modal
@@ -125,6 +125,8 @@ const ContactForm = () => {
                 title={modalConfig.title}
                 message={modalConfig.message}
                 type={modalConfig.type}
+                showCloseButton={false}
+                showFooter={false}
             />
 
             <form className="contact-form" id="contactForm" onSubmit={handleSubmit}>

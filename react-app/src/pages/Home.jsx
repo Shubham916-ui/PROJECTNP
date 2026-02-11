@@ -78,7 +78,7 @@ const Home = () => {
                     <div className="cta-content">
                         <h2>Ready to Get Started?</h2>
                         <p>Contact us today to discuss your plastic product requirements</p>
-                        <Link to="/contact" className="btn btn-primary btn-large">Contact Us Now</Link>
+                        <Link to="/contact" className="btn btn-primary btn-large">Get in Touch</Link>
                     </div>
                 </div>
             </section>
