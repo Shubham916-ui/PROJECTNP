@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { submitContactForm } from '../services/sheetDb';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const ContactForm = () => {
     });
 
     const [notification, setNotification] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         setFormData({
@@ -18,7 +20,7 @@ const ContactForm = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Validation
@@ -34,22 +36,30 @@ const ContactForm = () => {
             return;
         }
 
-        // Success
-        showNotification('Thank you! We will contact you soon.', 'success');
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            subject: 'general',
-            message: ''
-        });
+        setIsSubmitting(true);
+
+        try {
+            await submitContactForm(formData);
+            showNotification('Message sent successfully!', 'success');
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                subject: 'general',
+                message: ''
+            });
+        } catch (error) {
+            showNotification('Something went wrong. Please try again later.', 'error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const showNotification = (message, type) => {
         setNotification({ message, type });
         setTimeout(() => {
             setNotification(null);
-        }, 3000);
+        }, 5000);
     };
 
     const handleKeyDown = (e) => {
@@ -67,6 +77,7 @@ const ContactForm = () => {
             }
         }
     };
+
 
     return (
         <>
@@ -86,6 +97,7 @@ const ContactForm = () => {
                         onChange={handleChange}
                         onKeyDown={handleKeyDown}
                         placeholder="Enter your name"
+                        disabled={isSubmitting}
                         required
                     />
                 </div>
@@ -98,6 +110,7 @@ const ContactForm = () => {
                         onChange={handleChange}
                         onKeyDown={handleKeyDown}
                         placeholder="your.email@example.com"
+                        disabled={isSubmitting}
                         required
                     />
                 </div>
@@ -110,11 +123,18 @@ const ContactForm = () => {
                         onChange={handleChange}
                         onKeyDown={handleKeyDown}
                         placeholder="+977-XXX-XXXXXX"
+                        disabled={isSubmitting}
                     />
                 </div>
                 <div className="form-group">
                     <label htmlFor="subject">Subject</label>
-                    <select id="subject" value={formData.subject} onChange={handleChange} onKeyDown={handleKeyDown}>
+                    <select
+                        id="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        onKeyDown={handleKeyDown}
+                        disabled={isSubmitting}
+                    >
                         <option value="general">General Inquiry</option>
                         <option value="quote">Request a Quote</option>
                         <option value="product">Product Information</option>
@@ -130,10 +150,17 @@ const ContactForm = () => {
                         onKeyDown={handleKeyDown}
                         rows="5"
                         placeholder="Write your message here..."
+                        disabled={isSubmitting}
                         required
                     ></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary btn-large">Send Message</button>
+                <button
+                    type="submit"
+                    className="btn btn-primary btn-large"
+                    disabled={isSubmitting}
+                >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
             </form>
         </>
     );
