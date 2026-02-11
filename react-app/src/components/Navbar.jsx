@@ -22,9 +22,7 @@ const Navbar = () => {
                     </div>
                 </Link>
                 <ul className={`nav-menu ${isOpen ? 'active' : ''}`} id="navMenu">
-                    <li className="nav-toggle-item">
-                        <ThemeToggle />
-                    </li>
+
                     <li>
                         <NavLink to="/" className="nav-link" onClick={close}>
                             <span className="nav-link-inner">
@@ -56,6 +54,9 @@ const Navbar = () => {
                                 <span className="nav-text-hover">WHY US</span>
                             </span>
                         </NavLink>
+                    </li>
+                    <li className="nav-toggle-item">
+                        <ThemeToggle />
                     </li>
                     <li>
                         <NavLink to="/contact" className="nav-link contact-btn" onClick={close}>

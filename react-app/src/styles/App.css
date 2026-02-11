@@ -134,7 +134,8 @@ body {
 
 /* fixed navbar ke niche content hide na ho */
 body {
-    padding-top: 84px;
+    padding-top: 76px;
+    /* Adjusted for smaller navbar */
 }
 
 .navbar.scrolled {
@@ -145,7 +146,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 0.2rem;
     text-decoration: none;
 }
 
@@ -153,7 +154,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 2rem;
+    padding: 0.5rem 2rem;
+    /* Reduced vertical padding */
     max-width: 95% !important;
     /* Allowing more width than standard container */
     margin: 0 auto;
@@ -198,11 +200,15 @@ body {
     list-style: none;
     gap: 2rem;
     margin-left: auto;
+    align-items: center;
+    /* Ensures vertical centering */
 }
 
 .nav-toggle-item {
     display: flex;
     align-items: center;
+    margin: 0 -0.5rem;
+    /* Reduce gap visually */
 }
 
 .nav-link {
@@ -1326,6 +1332,28 @@ body {
         min-width: 120px;
         padding: 0.5rem 1rem;
         white-space: nowrap;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    /* Logo section spans full width */
+    .footer-col:first-child {
+        grid-column: 1 / -1;
+        text-align: left;
+    }
+
+    /* Ensure logo text aligns left in flex container if needed */
+    .footer-col:first-child .footer-logo {
+        justify-content: flex-start;
+    }
+
+    /* Contact section spans full width */
+    .footer-col:last-child {
+        grid-column: 1 / -1;
     }
 }
 
