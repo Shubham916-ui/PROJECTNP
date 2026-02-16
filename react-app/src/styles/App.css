@@ -138,6 +138,13 @@ body {
     /* Adjusted for smaller navbar */
 }
 
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+        /* Reduce padding for mobile navbar height */
+    }
+}
+
 .navbar.scrolled {
     box-shadow: var(--shadow-md);
 }
@@ -329,6 +336,55 @@ body {
     background: var(--text-primary);
     border-radius: 2px;
     transition: var(--transition-normal);
+}
+
+/* Adjustments for short screens (iPhone 4 height ~480px) */
+@media (max-width: 768px) and (max-height: 550px) {
+    .nav-menu {
+        padding: 1.5rem 1.5rem !important;
+        /* Reduced padding */
+        gap: 0.8rem !important;
+        /* Tighter gap */
+        max-height: 95vh;
+        justify-content: flex-start;
+        /* Ensure top alignment to avoid cutting off if tall */
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.25rem 0;
+    }
+
+    .nav-toggle-item {
+        margin-top: 0.25rem;
+        /* Less margin */
+    }
+
+    .nav-link.contact-btn {
+        margin-top: 0.5rem;
+        padding: 0.6rem 1.5rem;
+        /* Increased padding slightly */
+        background: var(--gradient-primary);
+        /* Ensure background is present */
+        color: white !important;
+        /* Ensure text is white */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-link.contact-btn .nav-text-main {
+        color: white !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-size: 0.9rem;
+        /* Adjust font size to fit */
+    }
+
+    .logo img {
+        max-height: 40px;
+        /* Smaller logo in menu if present */
+    }
 }
 
 /* Mobile Menu Styles */
@@ -798,6 +854,22 @@ body {
     z-index: 10;
 }
 
+/* Fix for small devices (e.g., 320px width) */
+@media (max-width: 350px) {
+    .products-carousel {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
 .product-image {
     width: 100%;
     height: 250px;
@@ -1215,16 +1287,17 @@ body {
     }
 
     .category-card {
-        padding: 1rem;
+        padding: 0.75rem 0.5rem;
+        /* Reduced horizontal padding, kept vertical efficient */
         aspect-ratio: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        /* Soft permanent shadow */
         border: 1px solid rgba(0, 0, 0, 0.05);
-        /* Subtle border for definition */
+        height: 100%;
+        /* Ensure it fills height if aspect-ratio has issues */
     }
 
     /* Disable hover effects on mobile */
@@ -1234,25 +1307,41 @@ body {
     }
 
     .category-icon {
-        margin-bottom: 0.25rem;
-        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        /* Fixed height container */
     }
 
     .category-icon svg {
-        width: 45px;
-        height: 45px;
+        width: 36px;
+        /* Slightly smaller icon */
+        height: 36px;
     }
 
     .category-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.25rem;
+        font-size: 1rem;
+        /* Slightly smaller title */
+        margin-bottom: 0.2rem;
+        line-height: 1.2;
     }
 
     .category-card p {
         display: block;
-        font-size: 0.75rem;
-        margin-top: 0.25rem;
-        line-height: 1.3;
+        font-size: 0.7rem;
+        /* Smaller text */
+        margin-top: 0;
+        line-height: 1.2;
+        max-width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        /* Limit lines just in case */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .stats-grid {
@@ -1354,6 +1443,122 @@ body {
     /* Contact section spans full width */
     .footer-col:last-child {
         grid-column: 1 / -1;
+    }
+}
+
+/* Extra small devices (iPhone 4, 5, SE - 320px to 375px) */
+@media (max-width: 375px) {
+
+    /* Hero Section Compact Fixes */
+    .hero {
+        min-height: auto;
+        /* Allow auto height if needed, or stick to 100vh but compact */
+        padding-top: 2rem;
+    }
+
+    .hero-container {
+        padding: 2rem 0;
+        /* Reduced vertical padding */
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        /* Smaller title */
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        /* Smaller subtitle */
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-badge {
+        margin-bottom: 1rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .hero-buttons {
+        gap: 0.8rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        /* Compact buttons */
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 200px;
+        /* Prevent overly wide buttons */
+    }
+
+    /* Category Grid Fixes */
+    .category-grid {
+        gap: 0.75rem;
+        grid-template-columns: 1fr;
+        /* Force 1 column */
+    }
+
+    .category-card {
+        padding: 1rem;
+        aspect-ratio: auto;
+        /* Remove fixed ratio */
+    }
+
+    .category-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .category-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .category-card p {
+        font-size: 0.8rem;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+    }
+
+    /* Footer & Stats Compact */
+    .footer-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Featured Products Compact */
+    .products-carousel .product-card {
+        min-width: 220px;
+        /* Smaller width */
+        width: 220px;
+    }
+
+    .product-image {
+        height: 150px;
+        /* Reduced image height */
+    }
+
+    .product-info {
+        padding: 1rem;
+        /* Reduced padding */
+    }
+
+    .product-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .product-info p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .product-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
     }
 }
 
