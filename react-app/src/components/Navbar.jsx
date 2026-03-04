@@ -67,10 +67,15 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                 </ul>
-                <div className={`hamburger ${isOpen ? 'active' : ''}`} id="hamburger" onClick={toggle}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div className="nav-mobile-controls">
+                    <div className="mobile-toggle-btn">
+                        <ThemeToggle />
+                    </div>
+                    <div className={`hamburger ${isOpen ? 'active' : ''}`} id="hamburger" onClick={toggle}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
             {/* Overlay backdrop for mobile menu */}

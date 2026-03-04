@@ -218,6 +218,21 @@ body {
     /* Reduce gap visually */
 }
 
+/* Container for mobile controls (toggle + hamburger) */
+.nav-mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1002;
+    /* Ensure above menu overlay */
+}
+
+.mobile-toggle-btn {
+    display: none;
+    /* Hidden on desktop */
+}
+
 .nav-link {
     text-decoration: none;
     color: var(--text-primary);
@@ -394,6 +409,17 @@ body {
         z-index: 1001;
     }
 
+    /* Show mobile toggle button */
+    .mobile-toggle-btn {
+        display: block;
+        margin-right: 0.5rem;
+    }
+
+    /* Hide the toggle inside the menu */
+    .nav-menu .nav-toggle-item {
+        display: none;
+    }
+
     .nav-menu {
         position: fixed !important;
         top: 0 !important;
@@ -475,6 +501,16 @@ body {
     justify-content: center;
     overflow: hidden;
     background: var(--bg-darker);
+    /* Pull hero up behind navbar */
+    margin-top: -76px;
+    padding-top: 76px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        margin-top: -60px;
+        padding-top: 60px;
+    }
 }
 
 .hero-gradient {
@@ -1444,6 +1480,16 @@ body {
     .footer-col:last-child {
         grid-column: 1 / -1;
     }
+
+    .product-catalog-page {
+        padding-top: 8rem;
+    }
+
+    .catalog-status {
+        margin-top: 2rem;
+        position: relative;
+        z-index: 1;
+    }
 }
 
 /* Extra small devices (iPhone 4, 5, SE - 320px to 375px) */
@@ -1993,6 +2039,28 @@ body {
 /* ============================================
    PRODUCTS PAGE
    ============================================ */
+
+.product-catalog-page {
+    padding-top: 2rem;
+    min-height: 100vh;
+}
+
+.catalog-status h2 {
+    color: #FF6B35 !important;
+    /* Force orange */
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: initial !important;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.item-count {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
 
 .product-catalog,
 .products-section {
@@ -3022,7 +3090,7 @@ body.dark-mode .contact-page-icon {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--text-secondary);
+    color: var(--dark-orange);
     font-weight: 600;
     margin-bottom: 1.5rem;
     text-decoration: none;
@@ -3469,4 +3537,658 @@ body.dark-mode .spec-value {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ============================================
+   ABOUT PAGE — REDESIGNED
+   ============================================ */
+
+.about-page {
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.about-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background:
+        linear-gradient(160deg, #1a0f08 0%, #2d1810 40%, #3d2010 70%, #1a0f08 100%);
+}
+
+/* Subtle factory texture via pseudo-element */
+.about-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 40px,
+            rgba(255, 107, 53, 0.03) 40px,
+            rgba(255, 107, 53, 0.03) 41px),
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 60px,
+            rgba(255, 184, 0, 0.03) 60px,
+            rgba(255, 184, 0, 0.03) 61px);
+    z-index: 0;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(26, 15, 8, 0.3) 50%,
+            rgba(26, 15, 8, 0.85) 100%);
+    z-index: 1;
+}
+
+/* Decorative glow orbs */
+.about-hero::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.25) 0%, transparent 70%);
+    top: -100px;
+    right: -80px;
+    z-index: 0;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 3rem 2rem 2.5rem;
+    color: white;
+    width: 100%;
+}
+
+.about-hero-badge {
+    display: inline-block;
+    background: rgba(255, 107, 53, 0.25);
+    border: 1px solid rgba(255, 107, 53, 0.4);
+    backdrop-filter: blur(8px);
+    color: #ffd0b3;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1.2rem;
+}
+
+.about-hero-title {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.about-hero-accent {
+    background: linear-gradient(135deg, #FF6B35, #FFB800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about-hero-sub {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-weight: 400;
+}
+
+/* ── Story Intro ── */
+.about-story {
+    background: var(--bg-white);
+    padding: 2rem 1.5rem;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 107, 53, 0.08);
+}
+
+.about-story p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 680px;
+}
+
+.about-story-brand {
+    color: var(--primary-orange);
+    font-weight: 700;
+}
+
+/* ── Section headings ── */
+.about-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-section-icon {
+    font-size: 1.3rem;
+}
+
+.about-section-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    background: none;
+    -webkit-text-fill-color: var(--text-primary);
+}
+
+/* ── Journey Timeline ── */
+.about-journey {
+    background: var(--bg-white);
+    padding: 2.5rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 107, 53, 0.08);
+}
+
+.about-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.journey-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+
+.journey-dot-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 0.25rem;
+}
+
+.journey-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--primary-orange);
+    border: 3px solid rgba(255, 107, 53, 0.25);
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.12);
+    transition: transform 0.2s ease;
+}
+
+.journey-item:hover .journey-dot {
+    transform: scale(1.3);
+}
+
+.journey-line {
+    width: 2px;
+    flex: 1;
+    min-height: 40px;
+    background: linear-gradient(to bottom, var(--primary-orange) 0%, rgba(255, 107, 53, 0.15) 100%);
+    margin: 4px 0;
+}
+
+.journey-content {
+    padding-bottom: 1.8rem;
+    flex: 1;
+}
+
+.journey-year {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primary-orange);
+    background: rgba(255, 107, 53, 0.1);
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.5px;
+}
+
+.journey-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.journey-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+/* ── Sustainable Growth ── */
+.about-sustainable {
+    background: var(--bg-light);
+    padding: 2.5rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 107, 53, 0.08);
+}
+
+.about-sustainable-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
+
+.about-sustain-cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.sustain-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 16px;
+    flex: 1;
+    min-width: 140px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.sustain-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.sustain-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.sustain-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.sustain-sub {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.1rem;
+}
+
+/* ── Leadership ── */
+.about-leadership {
+    background: var(--bg-white);
+    padding: 2.5rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 107, 53, 0.08);
+}
+
+.about-leadership-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.leadership-swipe {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.swipe-btn {
+    background: var(--bg-light);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    color: var(--primary-orange);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.swipe-btn:hover {
+    background: var(--primary-orange);
+    color: white;
+    transform: scale(1.1);
+}
+
+.leadership-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.leader-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    background: var(--bg-light);
+    padding: 1.4rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.leader-card.slide-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.leader-card.slide-out-right {
+    opacity: 0;
+    transform: translateX(-40px);
+}
+
+.leader-card.slide-out-left {
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+.leader-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
+}
+
+.leader-initials {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.leader-info {
+    flex: 1;
+}
+
+.leader-name {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.leader-role {
+    font-size: 0.8rem;
+    color: var(--primary-orange);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3px;
+}
+
+.leader-quote {
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.5;
+    display: flex;
+    gap: 0.4rem;
+    align-items: flex-start;
+}
+
+.quote-icon {
+    color: var(--primary-orange);
+    font-size: 0.7rem;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    opacity: 0.6;
+}
+
+.leader-dots {
+    display: flex;
+    gap: 0.4rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.leader-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 107, 53, 0.2);
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+    padding: 0;
+}
+
+.leader-dot.active {
+    background: var(--primary-orange);
+    transform: scale(1.4);
+}
+
+/* ── Certifications ── */
+.about-certifications {
+    background: var(--bg-light);
+    padding: 2.5rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 107, 53, 0.08);
+}
+
+.about-certifications .about-section-title {
+    margin-bottom: 1.5rem;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.cert-card {
+    background: var(--bg-white);
+    border: 2px solid rgba(255, 107, 53, 0.12);
+    border-radius: 18px;
+    padding: 1.4rem 1rem;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    cursor: default;
+}
+
+.cert-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-orange);
+}
+
+.cert-icon {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+.cert-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: pre-line;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ── CTA ── */
+.about-cta {
+    background: var(--bg-white);
+    padding: 2.5rem 1.5rem 3rem;
+    text-align: center;
+}
+
+.about-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, #FF6B35 0%, #FFB800 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(255, 107, 53, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    letter-spacing: 0.3px;
+}
+
+.about-cta-btn:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 10px 32px rgba(255, 107, 53, 0.5);
+}
+
+.cta-arrow {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.about-cta-btn:hover .cta-arrow {
+    transform: translateX(4px);
+}
+
+/* ============================================
+   DESKTOP — ABOUT PAGE OVERRIDES
+   ============================================ */
+
+@media (min-width: 769px) {
+    .about-hero {
+        min-height: 60vh;
+    }
+
+    .about-hero-content {
+        padding: 5rem 4rem 4rem;
+        max-width: 800px;
+    }
+
+    .about-hero-title {
+        font-size: 3.8rem;
+    }
+
+    .about-story {
+        padding: 3rem 4rem;
+    }
+
+    .about-story p {
+        font-size: 1.15rem;
+    }
+
+    .about-journey {
+        padding: 3.5rem 4rem;
+    }
+
+    .about-timeline {
+        max-width: 640px;
+    }
+
+    .about-sustainable {
+        padding: 3.5rem 4rem;
+    }
+
+    .about-sustain-cards {
+        max-width: 500px;
+    }
+
+    .about-leadership {
+        padding: 3.5rem 4rem;
+    }
+
+    .leader-card {
+        padding: 2rem;
+        max-width: 520px;
+    }
+
+    .about-certifications {
+        padding: 3.5rem 4rem;
+    }
+
+    .cert-grid {
+        max-width: 380px;
+        gap: 1.2rem;
+    }
+
+    .about-cta {
+        padding: 4rem 4rem 5rem;
+    }
+
+    .about-cta-btn {
+        font-size: 1.1rem;
+        padding: 1.1rem 3rem;
+    }
+}
+
+/* ── Dark Mode ── */
+body.dark-mode .about-hero {
+    background:
+        linear-gradient(160deg, #0d0a07 0%, #1a0f08 40%, #251408 70%, #0d0a07 100%);
+}
+
+body.dark-mode .about-story,
+body.dark-mode .about-journey,
+body.dark-mode .about-leadership,
+body.dark-mode .about-cta {
+    background: #1a1a1a;
+}
+
+body.dark-mode .about-sustainable,
+body.dark-mode .about-certifications {
+    background: #141414;
+}
+
+body.dark-mode .about-section-title {
+    color: #f3f4f6;
+    -webkit-text-fill-color: #f3f4f6;
+}
+
+body.dark-mode .journey-title {
+    color: #f3f4f6;
+}
+
+body.dark-mode .journey-desc,
+body.dark-mode .about-story p,
+body.dark-mode .about-sustainable-desc,
+body.dark-mode .sustain-sub,
+body.dark-mode .leader-quote {
+    color: #9ca3af;
+}
+
+body.dark-mode .journey-line {
+    background: linear-gradient(to bottom, var(--primary-orange) 0%, rgba(255, 107, 53, 0.1) 100%);
+}
+
+body.dark-mode .leader-card,
+body.dark-mode .sustain-card {
+    border-color: rgba(255, 107, 53, 0.15);
+}
+
+body.dark-mode .leader-card {
+    background: #222;
+}
+
+body.dark-mode .leader-name {
+    color: #f3f4f6;
+}
+
+body.dark-mode .swipe-btn {
+    background: #2a2a2a;
+    border-color: rgba(255, 107, 53, 0.25);
+}
+
+body.dark-mode .cert-card {
+    background: #222;
+    border-color: rgba(255, 107, 53, 0.15);
+}
+
+body.dark-mode .cert-label {
+    color: #f3f4f6;
+}
+
+body.dark-mode .sustain-label {
+    color: #f3f4f6;
 }
