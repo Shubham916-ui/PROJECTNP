@@ -4192,3 +4192,48 @@ body.dark-mode .cert-label {
 body.dark-mode .sustain-label {
     color: #f3f4f6;
 }
+
+/* ============================================
+   MAP SECTION (Contact Page)
+   ============================================ */
+
+.map-section {
+    padding: 4rem 0;
+    background: var(--bg-light);
+}
+
+.map-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    height: 450px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .map-section {
+        padding: 3rem 0;
+    }
+    .map-container {
+        height: 350px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .map-section {
+        padding: 2rem 0;
+    }
+    .map-header {
+        margin-bottom: 2rem;
+    }
+    .map-container {
+        height: 300px;
+        border-radius: 15px;
+    }
+}

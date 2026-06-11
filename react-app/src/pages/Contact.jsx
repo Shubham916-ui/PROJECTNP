@@ -56,6 +56,28 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Map Section */}
+            <section className="map-section">
+                <div className="container">
+                    <div className="map-header">
+                        <h2 className="section-title">Find Us Here</h2>
+                        <p className="section-subtitle">Visit our facility in Bhairahawa, Nepal</p>
+                    </div>
+                    <div className="map-container">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Shree%20Shyam%20Polymers%2C%20Omsatiya-2%2C%20Padsari%2C%20Bhairahawa%2C%20Nepal&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style={{ border: 0 }} 
+                            allowFullScreen="" 
+                            loading="lazy" 
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Location Map"
+                        ></iframe>
+                    </div>
+                </div>
+            </section>
         </>
     );
 };
