@@ -2490,7 +2490,7 @@ body.dark-mode .contact-page-icon {
    ============================================ */
 
 .contact-section {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-xl) 0 1rem;
     background: var(--bg-light);
 }
 
@@ -4210,7 +4210,7 @@ body.dark-mode .sustain-label {
    ============================================ */
 
 .map-section {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem;
     background: var(--bg-light);
 }
 
@@ -4229,7 +4229,7 @@ body.dark-mode .sustain-label {
 /* Tablet */
 @media (max-width: 1024px) {
     .map-section {
-        padding: 3rem 0;
+        padding: 1.5rem 0 3rem;
     }
     .map-container {
         height: 350px;
@@ -4239,7 +4239,7 @@ body.dark-mode .sustain-label {
 /* Mobile */
 @media (max-width: 768px) {
     .map-section {
-        padding: 2rem 0;
+        padding: 1rem 0 2rem;
     }
     .map-header {
         margin-bottom: 2rem;
