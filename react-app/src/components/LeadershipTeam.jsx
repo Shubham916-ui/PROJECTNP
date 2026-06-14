@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { motion, useInView } from 'framer-motion';
-import { FaLinkedinIn, FaQuoteLeft } from 'react-icons/fa';
+import { FaQuoteLeft } from 'react-icons/fa';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
 // Import Swiper styles
@@ -208,25 +208,13 @@ const LeadershipTeam = () => {
                                         </div>
 
                                         {/* Custom Quote on hover/details */}
-                                        <div className="mt-6 pt-5 border-t border-neutral-800/80 flex items-center justify-between">
+                                        <div className="mt-6 pt-5 border-t border-neutral-800/80 flex items-center justify-start">
                                             <div className="flex items-center gap-1.5 text-neutral-600 group-hover:text-amber-500/50 transition-colors duration-300">
                                                 <FaQuoteLeft className="text-xs" />
                                                 <span className="text-[10px] uppercase font-mono tracking-widest leading-none">
                                                     Vision
                                                 </span>
                                             </div>
-
-                                            {/* LinkedIn Placeholder or Elegant Details */}
-                                            <a
-                                                href="#contact"
-                                                className="w-8 h-8 rounded-full bg-neutral-800/50 hover:bg-amber-500 hover:text-neutral-950 flex items-center justify-center text-neutral-400 hover:scale-105 transition-all duration-300"
-                                                title={`Connect with ${leader.name}`}
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                }}
-                                            >
-                                                <FaLinkedinIn className="text-xs" />
-                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -238,13 +226,12 @@ const LeadershipTeam = () => {
                 {/* Mobile indicators / pagination (Custom CSS dots styled below) */}
                 <div className="mt-8 flex md:hidden justify-center gap-2">
                     {leaders.map((_, idx) => (
-                        <span 
-                            key={idx} 
-                            className={`h-1 rounded-full transition-all duration-300 ${
-                                activeIndex === idx 
-                                    ? 'w-8 bg-amber-500' 
+                        <span
+                            key={idx}
+                            className={`h-1 rounded-full transition-all duration-300 ${activeIndex === idx
+                                    ? 'w-8 bg-amber-500'
                                     : 'w-2 bg-neutral-800'
-                            }`} 
+                                }`}
                         />
                     ))}
                 </div>
