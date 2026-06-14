@@ -172,20 +172,22 @@ const LeadershipTeam = () => {
                     >
                         {leaders.map((leader, index) => (
                             <SwiperSlide key={index} className="h-auto">
-                                <div className="group relative rounded-[24px] overflow-hidden bg-neutral-900/30 border border-neutral-800/80 backdrop-blur-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 hover:scale-[1.03] hover:border-amber-500/30 hover:shadow-[0_0_40px_rgba(245,158,11,0.1)] flex flex-col h-[560px] cursor-grab active:cursor-grabbing">
+                                <div className="group relative rounded-[24px] overflow-hidden bg-neutral-900 border border-neutral-800/80 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 md:hover:scale-[1.03] md:hover:border-amber-500/30 md:hover:shadow-[0_0_40px_rgba(245,158,11,0.1)] flex flex-col h-[560px] cursor-grab active:cursor-grabbing transform-gpu will-change-transform">
 
                                     {/* Portrait Header */}
                                     <div className="relative h-[360px] overflow-hidden rounded-t-[24px]">
                                         {/* Image Overlay Dark Gradient */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/35 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/35 to-transparent z-10 transition-opacity duration-500 md:group-hover:opacity-90" />
 
                                         {/* Golden overlay light effect */}
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
 
                                         <img
                                             src={leader.image}
                                             alt={leader.name}
-                                            className="w-full h-full object-cover object-top filter contrast-[1.05] brightness-[0.95] group-hover:scale-105 transition-transform duration-700 ease-out"
+                                            className="w-full h-full object-cover object-top filter contrast-[1.05] brightness-[0.95] md:group-hover:scale-105 transition-transform duration-700 ease-out transform-gpu"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
 
                                         {/* Name and Designation Overlay */}
@@ -200,7 +202,7 @@ const LeadershipTeam = () => {
                                     </div>
 
                                     {/* Content/Bio Section */}
-                                    <div className="p-6 flex-grow flex flex-col justify-between bg-[#0b0b0b]/90 rounded-b-[24px] relative z-20">
+                                    <div className="p-6 flex-grow flex flex-col justify-between bg-[#0b0b0b] rounded-b-[24px] relative z-20">
                                         <div>
                                             <p className="text-neutral-400 text-[14px] leading-relaxed font-light font-sans tracking-wide">
                                                 {leader.bio}
@@ -209,7 +211,7 @@ const LeadershipTeam = () => {
 
                                         {/* Custom Quote on hover/details */}
                                         <div className="mt-6 pt-5 border-t border-neutral-800/80 flex items-center justify-start">
-                                            <div className="flex items-center gap-1.5 text-neutral-600 group-hover:text-amber-500/50 transition-colors duration-300">
+                                            <div className="flex items-center gap-1.5 text-neutral-600 md:group-hover:text-amber-500/50 transition-colors duration-300">
                                                 <FaQuoteLeft className="text-xs" />
                                                 <span className="text-[10px] uppercase font-mono tracking-widest leading-none">
                                                     Vision
