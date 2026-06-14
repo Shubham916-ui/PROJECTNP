@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Stats from '../components/Stats';
 import ProductCard from '../components/ProductCard';
+import LeadershipTeam from '../components/LeadershipTeam';
 import { categories } from '../data/categories.jsx';
 import { featuredProducts } from '../data/products';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -45,6 +46,9 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Leadership Team Carousel */}
+            <LeadershipTeam />
 
             {/* Sustainability Commitment */}
             <section className="sustainability">

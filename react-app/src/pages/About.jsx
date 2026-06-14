@@ -1,51 +1,13 @@
-import { useState } from 'react';
 import { timeline } from '../data/timeline';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import {
     FaRecycle,
-    FaSolarPanel,
-    FaChevronLeft,
-    FaChevronRight,
-    FaQuoteLeft
+    FaSolarPanel
 } from 'react-icons/fa';
-
-/* ── Leadership data ── */
-const leaders = [
-    {
-        id: 1,
-        name: 'Rajesh Sharma',
-        role: 'CEO & Founder',
-        quote: '"Quality is not a choice, it is our identity."',
-        initials: 'RS',
-        color: '#FF6B35'
-    },
-    {
-        id: 2,
-        name: 'Anita Gupta',
-        role: 'Head of Ops',
-        quote: '"Efficiency drives sustainability."',
-        initials: 'AG',
-        color: '#FFB800'
-    },
-    {
-        id: 3,
-        name: 'Mohan Thapa',
-        role: 'Head of R&D',
-        quote: '"Innovation never stops at SSPL."',
-        initials: 'MT',
-        color: '#D94800'
-    }
-];
-
-/* ── Certification data ── */
-const certs = [
-    { id: 1, label: 'ISO\n9001:2015', icon: '📋' },
-    { id: 2, label: 'Nepal Quality\nStandard', icon: '✔️' }
-];
 
 /* ══════════════════════════════
    MAIN COMPONENT
-══════════════════════════════ */
+   ══════════════════════════════ */
 const About = () => {
     return (
         <div className="about-page">
@@ -60,12 +22,6 @@ const About = () => {
 
             {/* 4. Sustainable Growth */}
             <SustainableGrowth />
-
-            {/* 5. Leadership */}
-            <Leadership />
-
-            {/* 6. Certifications */}
-            <Certifications />
         </div>
     );
 };
@@ -198,101 +154,5 @@ const SustainCard = ({ icon, label, sublabel, color, bg }) => (
         </div>
     </div>
 );
-
-/* ── 5. Leadership ── */
-const Leadership = () => {
-    const [idx, setIdx] = useState(0);
-    const [ref, isVisible] = useScrollAnimation();
-    const [sliding, setSliding] = useState(false);
-    const [dir, setDir] = useState('right');
-
-    const slide = (next) => {
-        if (sliding) return;
-        setDir(next > idx ? 'right' : 'left');
-        setSliding(true);
-        setTimeout(() => {
-            setIdx(next);
-            setSliding(false);
-        }, 300);
-    };
-
-    const prev = () => slide((idx - 1 + leaders.length) % leaders.length);
-    const next = () => slide((idx + 1) % leaders.length);
-
-    const leader = leaders[idx];
-
-    return (
-        <section
-            ref={ref}
-            className="about-leadership"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.6s ease' }}
-        >
-            <div className="about-leadership-header">
-                <h2 className="about-section-title" style={{ margin: 0 }}>Leadership</h2>
-                <div className="leadership-swipe">
-                    <button className="swipe-btn" onClick={prev} aria-label="Previous">
-                        <FaChevronLeft />
-                    </button>
-                    <button className="swipe-btn" onClick={next} aria-label="Next">
-                        <FaChevronRight />
-                    </button>
-                </div>
-            </div>
-
-            <div className="leadership-carousel">
-                <div
-                    className={`leader-card ${sliding ? `slide-out-${dir}` : 'slide-in'}`}
-                    key={leader.id}
-                >
-                    <div className="leader-avatar" style={{ background: `linear-gradient(135deg, ${leader.color}88, ${leader.color})` }}>
-                        <span className="leader-initials">{leader.initials}</span>
-                    </div>
-                    <div className="leader-info">
-                        <div className="leader-name">{leader.name}</div>
-                        <div className="leader-role">{leader.role}</div>
-                        <div className="leader-quote">
-                            <FaQuoteLeft className="quote-icon" />
-                            {leader.quote}
-                        </div>
-                    </div>
-                </div>
-
-                {/* Dots */}
-                <div className="leader-dots">
-                    {leaders.map((_, i) => (
-                        <button
-                            key={i}
-                            className={`leader-dot ${i === idx ? 'active' : ''}`}
-                            onClick={() => slide(i)}
-                            aria-label={`Leader ${i + 1}`}
-                        />
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
-
-/* ── 6. Certifications ── */
-const Certifications = () => {
-    const [ref, isVisible] = useScrollAnimation();
-    return (
-        <section
-            ref={ref}
-            className="about-certifications"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.6s ease' }}
-        >
-            <h2 className="about-section-title">Certifications</h2>
-            <div className="cert-grid">
-                {certs.map(c => (
-                    <div key={c.id} className="cert-card">
-                        <div className="cert-icon">{c.icon}</div>
-                        <div className="cert-label">{c.label}</div>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-};
 
 export default About;

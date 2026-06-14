@@ -12,6 +12,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import CallButton from './components/CallButton';
 import LocationButton from './components/LocationButton';
 import { ThemeProvider } from './context/ThemeContext';
+import './styles/tailwind.css';
 import './styles/App.css';
 
 function ScrollToTop() {
