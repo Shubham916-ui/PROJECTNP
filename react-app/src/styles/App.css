@@ -36,6 +36,12 @@ body {
     perspective: none;
 }
 
+html.mobile-menu-open,
+body.mobile-menu-open {
+    overflow: hidden !important;
+    height: 100% !important;
+}
+
 :root {
     /* Monochromatic Warm Palette - Based on Logo */
     --primary-orange: #FF6B35;
@@ -440,9 +446,10 @@ body {
         margin-left: 0 !important;
         /* Reset auto margin */
         gap: 1.5rem;
-        z-index: 1000;
+        z-index: 1020;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -484,8 +491,13 @@ body {
         right: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-        /* Below the menu (z-index: 1000) */
+        z-index: 1010;
+        /* Below the active menu (z-index: 1020) but above floating buttons (z-index: 1000) */
+    }
+
+    /* Ensure navbar is above overlay when mobile menu is open */
+    .navbar.menu-is-open {
+        z-index: 1020 !important;
     }
 }
 
