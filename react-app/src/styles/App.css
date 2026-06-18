@@ -2774,6 +2774,10 @@ body.dark-mode .contact-page-icon {
         grid-template-columns: 1fr;
     }
 
+    .contact-methods {
+        margin-bottom: 0;
+    }
+
     .contact-form-card {
         padding: 2rem;
     }
