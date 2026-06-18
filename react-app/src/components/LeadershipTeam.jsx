@@ -79,8 +79,8 @@ const LeadershipTeam = () => {
         >
             {/* Elegant Luxury Background Accents */}
             <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/10 via-neutral-950 to-neutral-950 pointer-events-none" />
-            <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-[120px] pointer-events-none hidden md:block" />
+            <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-amber-500/5 rounded-full blur-[120px] pointer-events-none hidden md:block" />
 
             {/* Fine Luxury Grid Pattern (Subtle) */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
@@ -185,7 +185,7 @@ const LeadershipTeam = () => {
                                         <img
                                             src={leader.image}
                                             alt={leader.name}
-                                            className="w-full h-full object-cover object-top filter contrast-[1.05] brightness-[0.95] md:group-hover:scale-105 transition-transform duration-700 ease-out transform-gpu"
+                                            className="w-full h-full object-cover object-top md:filter md:contrast-[1.05] md:brightness-[0.95] md:group-hover:scale-105 transition-transform duration-700 ease-out transform-gpu"
                                             loading="lazy"
                                             decoding="async"
                                         />

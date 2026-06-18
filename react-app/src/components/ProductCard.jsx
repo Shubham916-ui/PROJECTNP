@@ -2,17 +2,12 @@ import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const ProductCard = ({ badge, image, title, description, link = '/products' }) => {
-    const [ref, isVisible] = useScrollAnimation();
+    const ref = useScrollAnimation();
 
     return (
         <div
             ref={ref}
-            className="product-card"
-            style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                transition: 'opacity 0.6s ease, transform 0.6s ease'
-            }}
+            className="product-card scroll-animate translate-y"
         >
             {badge && <div className="product-badge">{badge}</div>}
             <div className="product-image">

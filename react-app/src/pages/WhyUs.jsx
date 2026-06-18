@@ -90,19 +90,14 @@ const benefitIcons = {
 };
 
 const AdvantageCard = ({ icon, title, description }) => {
-    const [ref, isVisible] = useScrollAnimation();
+    const ref = useScrollAnimation();
     // Get the icon component from the map using the string key
     const iconComponent = iconMap[icon] || <FaTrophy />;
 
     return (
         <div
             ref={ref}
-            className="advantage-card"
-            style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                transition: 'opacity 0.6s ease, transform 0.6s ease'
-            }}
+            className="advantage-card scroll-animate translate-y"
         >
             <div className="advantage-icon">{iconComponent}</div>
             <h3>{title}</h3>
@@ -112,17 +107,12 @@ const AdvantageCard = ({ icon, title, description }) => {
 };
 
 const TrustCard = ({ stat, label }) => {
-    const [ref, isVisible] = useScrollAnimation();
+    const ref = useScrollAnimation();
 
     return (
         <div
             ref={ref}
-            className="trust-card"
-            style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'scale(0.9)' : 'scale(0.9)',
-                transition: 'opacity 0.6s ease, transform 0.6s ease'
-            }}
+            className="trust-card scroll-animate"
         >
             <div className="trust-stat">{stat}</div>
             <div className="trust-label">{label}</div>
@@ -131,18 +121,13 @@ const TrustCard = ({ stat, label }) => {
 };
 
 const BenefitItem = ({ number, title, description }) => {
-    const [ref, isVisible] = useScrollAnimation();
+    const ref = useScrollAnimation();
     const icon = benefitIcons[number] || <FaBolt />;
 
     return (
         <div
             ref={ref}
-            className="benefit-item"
-            style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                transition: 'opacity 0.6s ease, transform 0.6s ease'
-            }}
+            className="benefit-item scroll-animate translate-y"
         >
             <div className="benefit-icon">{icon}</div>
             <div className="benefit-number">{number}</div>

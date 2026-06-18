@@ -91,18 +91,13 @@ const Home = () => {
 };
 
 const CategoryCard = ({ icon, name, description }) => {
-    const [ref, isVisible] = useScrollAnimation();
+    const ref = useScrollAnimation();
 
     return (
         <Link to="/products" className="category-card-link">
             <div
                 ref={ref}
-                className="category-card"
-                style={{
-                    opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                    transition: 'opacity 0.6s ease, transform 0.6s ease'
-                }}
+                className="category-card scroll-animate translate-y"
             >
                 <div className="category-icon">{icon}</div>
                 <h3>{name}</h3>

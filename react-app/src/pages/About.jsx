@@ -43,12 +43,11 @@ const AboutHero = () => (
 
 /* ── 2. Story Intro ── */
 const StoryIntro = () => {
-    const [ref, isVisible] = useScrollAnimation();
+    const ref = useScrollAnimation();
     return (
         <section
             ref={ref}
-            className="about-story"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.6s ease' }}
+            className="about-story scroll-animate translate-y"
         >
             <p>
                 At{' '}
@@ -62,13 +61,12 @@ const StoryIntro = () => {
 
 /* ── 3. Our Journey ── */
 const OurJourney = () => {
-    const [hRef, hVisible] = useScrollAnimation();
+    const hRef = useScrollAnimation();
     return (
         <section className="about-journey">
             <div
                 ref={hRef}
-                className="about-section-header"
-                style={{ opacity: hVisible ? 1 : 0, transform: hVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.5s ease' }}
+                className="about-section-header scroll-animate translate-y"
             >
                 <span className="about-section-icon">🕐</span>
                 <h2 className="about-section-title">Our Journey</h2>
@@ -84,15 +82,13 @@ const OurJourney = () => {
 };
 
 const JourneyItem = ({ year, title, description, index }) => {
-    const [ref, isVisible] = useScrollAnimation();
+    const ref = useScrollAnimation();
     return (
         <div
             ref={ref}
-            className="journey-item"
+            className="journey-item scroll-animate translate-x"
             style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateX(0)' : 'translateX(-30px)',
-                transition: `all 0.55s ease ${index * 0.12}s`
+                transitionDelay: `${index * 0.12}s`
             }}
         >
             <div className="journey-dot-col">
@@ -110,12 +106,11 @@ const JourneyItem = ({ year, title, description, index }) => {
 
 /* ── 4. Sustainable Growth ── */
 const SustainableGrowth = () => {
-    const [ref, isVisible] = useScrollAnimation();
+    const ref = useScrollAnimation();
     return (
         <section
             ref={ref}
-            className="about-sustainable"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.6s ease' }}
+            className="about-sustainable scroll-animate translate-y"
         >
             <div className="about-section-header">
                 <span className="about-section-icon">🌿</span>

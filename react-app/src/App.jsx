@@ -8,6 +8,7 @@ import Products from './pages/Products';
 import ProductDetails from './pages/ProductDetails';
 import WhyUs from './pages/WhyUs';
 import Contact from './pages/Contact';
+import FlexoPrinting from './pages/FlexoPrinting';
 import WhatsAppButton from './components/WhatsAppButton';
 import CallButton from './components/CallButton';
 import LocationButton from './components/LocationButton';
@@ -29,15 +30,24 @@ function ScrollToTop() {
 function App() {
     useEffect(() => {
         // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+        const handleAnchorClick = function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        };
+
+        const anchors = document.querySelectorAll('a[href^="#"]');
+        anchors.forEach(anchor => {
+            anchor.addEventListener('click', handleAnchorClick);
         });
+
+        return () => {
+            anchors.forEach(anchor => {
+                anchor.removeEventListener('click', handleAnchorClick);
+            });
+        };
     }, []);
 
     return (
@@ -52,6 +62,7 @@ function App() {
                     <Route path="/why-us" element={<WhyUs />} />
                     <Route path="/product/:id" element={<ProductDetails />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/flexo-printing" element={<FlexoPrinting />} />
                 </Routes>
                 <Footer />
                 <LocationButton />

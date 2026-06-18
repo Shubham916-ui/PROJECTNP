@@ -64,6 +64,14 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li>
+                            <NavLink to="/flexo-printing" className="nav-link nav-link-flexo" onClick={close}>
+                                <span className="nav-link-inner">
+                                    <span className="nav-text-main">FLEXOGRAPHIC</span>
+                                    <span className="nav-text-hover">FLEXOGRAPHIC</span>
+                                </span>
+                            </NavLink>
+                        </li>
+                        <li>
                             <NavLink to="/why-us" className="nav-link" onClick={close}>
                                 <span className="nav-link-inner">
                                     <span className="nav-text-main">WHY US</span>

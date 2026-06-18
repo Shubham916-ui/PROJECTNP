@@ -83,17 +83,12 @@ const Contact = () => {
 };
 
 const ContactMethod = ({ icon, title, content }) => {
-    const [ref, isVisible] = useScrollAnimation();
+    const ref = useScrollAnimation();
 
     return (
         <div
             ref={ref}
-            className="contact-method"
-            style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                transition: 'opacity 0.6s ease, transform 0.6s ease'
-            }}
+            className="contact-method scroll-animate translate-y"
         >
             <div className="contact-icon">{icon}</div>
             <div className="contact-details">
