@@ -304,17 +304,17 @@ body {
 
 /* Flexographic Printing Nav Link - green accent */
 .nav-link-flexo .nav-text-main {
-    color: #059669;
+    color: var(--primary-orange);
     font-weight: 700;
 }
 
 .nav-link-flexo .nav-text-hover {
-    color: #059669 !important;
+    color: var(--primary-orange) !important;
 }
 
 .nav-link-flexo.active .nav-text-main,
 .nav-link-flexo:hover .nav-text-main {
-    color: #059669;
+    color: var(--primary-orange);
 }
 
 /* Contact Button Styling */
@@ -4328,8 +4328,8 @@ body.dark-mode .sustain-label {
     top: 0; left: 0; right: 0; bottom: 0;
     background: linear-gradient(
         135deg,
-        rgba(10, 22, 40, 0.88) 0%,
-        rgba(30, 58, 95, 0.75) 60%,
+        rgba(45, 24, 16, 0.88) 0%,
+        rgba(107, 68, 35, 0.75) 60%,
         rgba(0, 0, 0, 0.45) 100%
     );
     z-index: 1;
@@ -4346,9 +4346,9 @@ body.dark-mode .sustain-label {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(16, 185, 129, 0.2);
-    border: 1px solid rgba(16, 185, 129, 0.4);
-    color: #86efac;
+    background: rgba(255, 107, 53, 0.2);
+    border: 1px solid rgba(255, 107, 53, 0.4);
+    color: var(--primary-amber);
     padding: 0.4rem 1.1rem;
     border-radius: 50px;
     font-size: 0.8rem;
@@ -4366,7 +4366,7 @@ body.dark-mode .sustain-label {
 }
 
 .flexo-hero-content h1 span {
-    background: linear-gradient(90deg, #60A5FA, #10B981);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -4389,18 +4389,18 @@ body.dark-mode .sustain-label {
     display: inline-flex;
     align-items: center;
     padding: 0.8rem 1.8rem;
-    background: #10B981;
+    background: var(--primary-orange);
     color: white;
     font-weight: 700;
     font-size: 0.95rem;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.35);
 }
 
 .flexo-hero-btn-primary:hover {
-    background: #059669;
+    background: var(--dark-orange);
     transform: translateY(-2px);
 }
 
@@ -4438,12 +4438,12 @@ body.dark-mode .sustain-label {
 .flexo-sec-header h2 {
     font-size: 2rem;
     font-weight: 800;
-    color: #1E3A5F;
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
 .flexo-sec-header p {
-    color: #64748B;
+    color: var(--text-secondary);
     font-size: 1rem;
 }
 
@@ -4460,8 +4460,8 @@ body.dark-mode .sustain-label {
 }
 
 .flexo-cap-card {
-    background: #F8FAFC;
-    border: 1px solid #E2E8F0;
+    background: var(--bg-light);
+    border: 1px solid var(--lighter-peach);
     border-radius: 18px;
     padding: 2.2rem 2rem;
     text-align: center;
@@ -4470,34 +4470,34 @@ body.dark-mode .sustain-label {
 
 .flexo-cap-card:hover {
     background: #fff;
-    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.12);
+    box-shadow: var(--shadow-md);
     transform: translateY(-5px);
-    border-color: #BFDBFE;
+    border-color: var(--light-orange);
 }
 
 .flexo-cap-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+    background: var(--gradient-card);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    color: #2563EB;
+    color: var(--primary-orange);
     margin: 0 auto 1.2rem;
 }
 
 .flexo-cap-card h4 {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #1E3A5F;
+    color: var(--text-primary);
     margin-bottom: 0.6rem;
 }
 
 .flexo-cap-card p {
     font-size: 0.9rem;
-    color: #64748B;
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
@@ -4508,7 +4508,7 @@ body.dark-mode .sustain-label {
 /* ── MATERIALS CAROUSEL ── */
 .flexo-materials-sec {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);
+    background: var(--bg-dark);
 }
 
 .flexo-materials-sec .flexo-sec-header h2 {
@@ -4630,7 +4630,7 @@ body.dark-mode .sustain-label {
 }
 
 .flexo-dot.active {
-    background: #10B981;
+    background: var(--primary-orange);
     width: 24px;
     border-radius: 4px;
 }
@@ -4646,7 +4646,7 @@ body.dark-mode .sustain-label {
 /* ── WHY CHOOSE + MOSAIC ── */
 .flexo-why-sec {
     padding: 5rem 0;
-    background: #F8FAFC;
+    background: var(--bg-light);
 }
 
 .flexo-why-layout {
@@ -4659,7 +4659,7 @@ body.dark-mode .sustain-label {
 .flexo-why-left h2 {
     font-size: 2rem;
     font-weight: 800;
-    color: #1E3A5F;
+    color: var(--text-primary);
     margin-bottom: 2rem;
     line-height: 1.2;
 }
@@ -4674,10 +4674,10 @@ body.dark-mode .sustain-label {
     align-items: center;
     gap: 0.9rem;
     padding: 0.7rem 0;
-    color: #334155;
+    color: var(--text-secondary);
     font-size: 0.97rem;
     font-weight: 500;
-    border-bottom: 1px solid #E2E8F0;
+    border-bottom: 1px solid var(--lighter-peach);
 }
 
 .flexo-why-list li:last-child {
@@ -4688,9 +4688,9 @@ body.dark-mode .sustain-label {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #10B981;
+    background: var(--primary-orange);
     flex-shrink: 0;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
 }
 
 /* Mosaic grid */
@@ -4705,7 +4705,7 @@ body.dark-mode .sustain-label {
 .flexo-mosaic-main {
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.12);
+    box-shadow: var(--shadow-lg);
     height: 100%;
 }
 
@@ -4727,7 +4727,7 @@ body.dark-mode .sustain-label {
     flex: 1;
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+    box-shadow: var(--shadow-md);
     min-height: 0;
 }
 
@@ -4763,7 +4763,7 @@ body.dark-mode .sustain-label {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.08);
+    box-shadow: var(--shadow-md);
     aspect-ratio: 1;
     cursor: pointer;
 }
@@ -4785,7 +4785,7 @@ body.dark-mode .sustain-label {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(10,22,40,0.9), transparent);
+    background: linear-gradient(to top, rgba(45,24,16,0.9), transparent);
     color: white;
     font-size: 0.82rem;
     font-weight: 600;
@@ -4802,7 +4802,7 @@ body.dark-mode .sustain-label {
 /* ── SERVICE DETAILS SPLIT ── */
 .flexo-details-sec {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #F8FAFC, #EFF6FF);
+    background: linear-gradient(135deg, var(--bg-light), var(--bg-white));
 }
 
 .flexo-details-layout {
@@ -4816,7 +4816,7 @@ body.dark-mode .sustain-label {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
+    box-shadow: var(--shadow-lg);
 }
 
 .flexo-details-image img {
@@ -4831,20 +4831,20 @@ body.dark-mode .sustain-label {
     bottom: 1.2rem;
     right: 1.2rem;
     background: rgba(255,255,255,0.96);
-    color: #1E3A5F;
+    color: var(--text-primary);
     padding: 0.55rem 1.1rem;
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 800;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    border: 1.5px solid #E2E8F0;
+    border: 1.5px solid var(--lighter-peach);
 }
 
 .flexo-details-text .flexo-section-tag {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #2563EB;
+    color: var(--primary-orange);
     font-size: 0.82rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -4855,14 +4855,14 @@ body.dark-mode .sustain-label {
 .flexo-details-text h2 {
     font-size: 2rem;
     font-weight: 800;
-    color: #1E3A5F;
+    color: var(--text-primary);
     line-height: 1.25;
     margin-bottom: 1.2rem;
 }
 
 .flexo-details-text p {
     font-size: 0.97rem;
-    color: #475569;
+    color: var(--text-secondary);
     line-height: 1.75;
     margin-bottom: 1rem;
 }
@@ -4877,10 +4877,10 @@ body.dark-mode .sustain-label {
 
 .flexo-chip {
     padding: 0.4rem 1rem;
-    background: #EFF6FF;
-    border: 1.5px solid #BFDBFE;
+    background: var(--bg-light);
+    border: 1.5px solid var(--lighter-peach);
     border-radius: 50px;
-    color: #1E3A5F;
+    color: var(--text-primary);
     font-size: 0.82rem;
     font-weight: 700;
 }
@@ -4890,19 +4890,19 @@ body.dark-mode .sustain-label {
     align-items: center;
     gap: 0.6rem;
     padding: 0.9rem 2rem;
-    background: linear-gradient(135deg, #1E3A5F, #2563EB);
+    background: var(--gradient-primary);
     color: white;
     font-weight: 700;
     font-size: 0.95rem;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: var(--shadow-md);
 }
 
 .btn-flexo-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+    box-shadow: var(--shadow-lg);
 }
 
 @media (max-width: 968px) {
@@ -4913,7 +4913,7 @@ body.dark-mode .sustain-label {
 /* ── FINAL CTA ── */
 .flexo-final-cta {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #0A1628 0%, #1E3A5F 100%);
+    background: var(--bg-darker);
 }
 
 .flexo-cta-box {
@@ -4953,7 +4953,7 @@ body.dark-mode .sustain-label {
     display: inline-flex;
     align-items: center;
     padding: 0.9rem 2.2rem;
-    background: #10B981;
+    background: var(--primary-orange);
     color: white;
     font-weight: 700;
     font-size: 1rem;
@@ -4965,7 +4965,7 @@ body.dark-mode .sustain-label {
 }
 
 .flexo-cta-primary-btn:hover {
-    background: #059669;
+    background: var(--dark-orange);
     transform: translateY(-2px);
 }
 

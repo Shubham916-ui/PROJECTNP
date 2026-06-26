@@ -85,15 +85,15 @@ const FlexoPrinting = () => {
             {/* ── CAPABILITIES ── */}
             <section className="flexo-capabilities-sec" id="flexo-capabilities">
                 <div className="container">
-                    <div className="flexo-sec-header">
-                        <h2>Our Capabilities</h2>
-                        <p>What makes our flexographic printing stand out</p>
+                    <div className="section-header">
+                        <h2 className="section-title">Our Capabilities</h2>
+                        <p className="section-subtitle">What makes our flexographic printing stand out</p>
                     </div>
-                    <div className="flexo-cap-grid">
+                    <div className="category-grid">
                         {capabilities.map((cap, i) => (
-                            <div className="flexo-cap-card" key={i}>
-                                <div className="flexo-cap-icon">{cap.icon}</div>
-                                <h4>{cap.title}</h4>
+                            <div className="category-card" key={i}>
+                                <div className="category-icon">{cap.icon}</div>
+                                <h3>{cap.title}</h3>
                                 <p>{cap.desc}</p>
                             </div>
                         ))}
@@ -195,9 +195,9 @@ const FlexoPrinting = () => {
             {/* ── PRINTED SAMPLES GALLERY ── */}
             <section className="flexo-samples-sec">
                 <div className="container">
-                    <div className="flexo-sec-header">
-                        <h2>Printed Packaging Samples</h2>
-                        <p>Real examples of our flexographic printing quality</p>
+                    <div className="section-header">
+                        <h2 className="section-title">Printed Packaging Samples</h2>
+                        <p className="section-subtitle">Real examples of our flexographic printing quality</p>
                     </div>
                     <div className="flexo-samples-grid">
                         {galleryImages.map((img, i) => (
