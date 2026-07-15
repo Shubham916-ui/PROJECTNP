@@ -39,9 +39,9 @@ const whyPoints = [
 ];
 
 const galleryImages = [
-    { src: '/photos/flexo-printing-closeup.png', label: 'Flexo Press in Action' },
-    { src: '/photos/printed-packaging-1.png', label: 'Custom Brand Print' },
-    { src: '/photos/printed-packaging-2.png', label: 'High-Res Label Print' },
+    { src: '/photos/real-flexo-3.png', label: 'Flexo Press in Action' },
+    { src: '/photos/real-flexo-1.png', label: 'Custom Brand Print' },
+    { src: '/photos/real-flexo-2.png', label: 'High-Res Roll Print' },
     { src: '/photos/agricultural-printed-bags.png', label: 'Rice & Agri Bags' },
 ];
 
@@ -64,7 +64,7 @@ const FlexoPrinting = () => {
             {/* ── HERO BANNER ── */}
             <section className="flexo-hero-banner">
                 <img
-                    src="/photos/flexo-hero-machine.png"
+                    src="/photos/real-flexo-1.png"
                     alt="Flexographic Printing Press"
                     className="flexo-hero-bg"
                 />
@@ -173,14 +173,14 @@ const FlexoPrinting = () => {
                         <div className="flexo-why-right">
                             <div className="flexo-mosaic">
                                 <div className="flexo-mosaic-main">
-                                    <img src="/photos/flexo-printing-closeup.png" alt="Flexo printing in action" />
+                                    <img src="/photos/real-flexo-3.png" alt="Flexo printing in action" />
                                 </div>
                                 <div className="flexo-mosaic-side">
                                     <div className="flexo-mosaic-side-img">
-                                        <img src="/photos/printed-packaging-1.png" alt="Custom brand packaging" />
+                                        <img src="/photos/real-flexo-1.png" alt="Custom brand packaging" />
                                     </div>
                                     <div className="flexo-mosaic-side-img">
-                                        <img src="/photos/printed-packaging-2.png" alt="High-res print" />
+                                        <img src="/photos/real-flexo-2.png" alt="High-res print" />
                                     </div>
                                     <div className="flexo-mosaic-side-img">
                                         <img src="/photos/agricultural-printed-bags.png" alt="Rice bags" />
@@ -215,7 +215,7 @@ const FlexoPrinting = () => {
                 <div className="container">
                     <div className="flexo-details-layout">
                         <div className="flexo-details-image">
-                            <img src="/photos/flexo-printing-machine.png" alt="Flexo Printing Machine" />
+                            <img src="/photos/real-flexo-2.png" alt="Flexo Printing Machine" />
                             <div className="flexo-details-badge">✨ Custom Branding Available</div>
                         </div>
                         <div className="flexo-details-text">
