@@ -4,7 +4,7 @@ export const products = [
         name: 'Black HDPE Pipes',
         badge: 'Popular',
         category: 'Industrial',
-        image: '/photos/hdpe-pipes.png',
+        image: '/photos/hdpe-pipes.webp',
         description: 'Durable and corrosion-resistant pipes for water supply and irrigation systems.',
         features: [
             'Corrosion resistant',
@@ -25,7 +25,7 @@ export const products = [
         name: 'Garbage Bags',
         badge: 'Best Seller',
         category: 'Sanitation',
-        image: '/photos/garbage-bags.png',
+        image: '/photos/garbage-bags.webp',
         description: 'Strong, leak-proof bags for hygienic waste management in homes and businesses.',
         features: [
             'Tear-resistant',
@@ -46,7 +46,7 @@ export const products = [
         name: 'Shrink Films',
         badge: 'Versatile',
         category: 'Packaging',
-        image: '/photos/shrink-films.png',
+        image: '/photos/shrink-films.webp',
         description: 'High-quality shrink films for product packaging and bundling applications.',
         features: [
             'High clarity',
@@ -67,7 +67,7 @@ export const products = [
         name: 'Polythene Bags',
         badge: 'Customizable',
         category: 'Packaging',
-        image: '/photos/polythene-bags.png',
+        image: '/photos/polythene-bags.webp',
         description: 'Versatile polythene bags in LD/HM/HD variants for various packaging needs.',
         features: [
             'Multiple density options',
@@ -88,7 +88,7 @@ export const products = [
         name: 'LD Pouches',
         badge: 'Food Safe',
         category: 'Packaging',
-        image: '/photos/ld-pouches.png',
+        image: '/photos/ld-pouches.webp',
         description: 'Clear LD pouches perfect for food packaging with excellent moisture resistance.',
         features: [
             'Crystal clear',
@@ -109,7 +109,7 @@ export const products = [
         name: 'Mulch Films',
         badge: 'Eco-Friendly',
         category: 'Agriculture',
-        image: '/photos/product-images/mulch-films.png?v=fixed',
+        image: '/photos/product-images/mulch-films.webp',
         description: 'Agricultural films to retain moisture, control weeds, and improve crop yield.',
         features: [
             'UV stabilized',
@@ -130,7 +130,7 @@ export const products = [
         name: 'Grow Bags',
         badge: 'Gardening',
         category: 'Agriculture',
-        image: '/photos/grow-bags.png',
+        image: '/photos/grow-bags.webp',
         description: 'Durable grow bags for plants with excellent drainage and root development.',
         features: [
             'UV resistant',
@@ -151,7 +151,7 @@ export const products = [
         name: 'Nursery Bags',
         badge: 'Professional',
         category: 'Agriculture',
-        image: '/photos/nursery-bags.png',
+        image: '/photos/nursery-bags.webp',
         description: 'Specialized bags for seedlings and young plants in nurseries.',
         features: [
             'Eco-friendly material',
@@ -172,7 +172,7 @@ export const products = [
         name: 'Disposable Cutlery',
         badge: 'Convenient',
         category: 'Consumer',
-        image: '/photos/product-images/disposable-cutlery.jpg',
+        image: '/photos/product-images/disposable-cutlery.webp',
         description: 'Food-grade disposable plastic cutlery for events and daily use.',
         features: [
             'Food-grade plastic',

@@ -1141,7 +1141,7 @@ body {
 
 .footer {
     /* section aur footer ke beech spacing */
-    margin-top: var(--spacing-lg);
+    margin-top: 0;
     background: var(--bg-darker);
     color: var(--text-white);
     padding: var(--spacing-lg) 0 var(--spacing-md);
