@@ -30,8 +30,8 @@ const ProductDetails = () => {
             case 'Industrial':
                 return [
                     { label: 'Material', value: 'PE-100 / PE-80' },
-                    { label: 'Pressure Rating', value: 'PN 6 to PN 16' },
-                    { label: 'Standard', value: 'ISO 4427 / DIN 8074' },
+                    { label: 'Pressure Rating', value: 'PN 5 to PN 16' },
+                    { label: 'Standard', value: 'NS-40:2079' },
                     { label: 'Temperature', value: '-40°C to 60°C' }
                 ];
             default:
