@@ -216,7 +216,7 @@ const FlexoPrinting = () => {
                     <div className="flexo-details-layout">
                         <div className="flexo-details-image">
                             <img src="/photos/real-flexo-2.png" alt="Flexo Printing Machine" />
-                            <div className="flexo-details-badge">✨ Custom Branding Available</div>
+                            <div className="flexo-details-badge">Custom Branding Available</div>
                         </div>
                         <div className="flexo-details-text">
                             <div className="flexo-section-tag"><FaPrint /> Our Printing Service</div>
