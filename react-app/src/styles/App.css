@@ -105,12 +105,30 @@ body.mobile-menu-open {
     --shadow-glow: 0 0 30px rgba(255, 107, 53, 0.3);
 }
 
+/* ============================================
+   ANTI-FLASH DEFAULT BACKGROUNDS
+   Dark theme is the default. Light theme overrides below.
+   ============================================ */
+html,
 body {
+    background: #121212;
+    color: #ecf0f1;
     font-family: var(--font-primary);
     line-height: 1.6;
-    color: var(--text-primary);
-    background: var(--bg-light);
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Light mode explicit overrides */
+body:not(.dark-mode) {
+    background: var(--bg-light);
+    color: var(--text-primary);
+}
+
+body.dark-mode {
+    background: var(--bg-light); /* --bg-light is overridden to #121212 in dark-mode vars */
+    color: var(--text-primary);
 }
 
 .container {
@@ -125,17 +143,25 @@ body {
 
 .navbar {
     position: fixed;
-    /* scroll karo tab bhi top pe rahe */
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    /* Default: dark glass — matches default dark theme to prevent white flash */
+    background: rgba(18, 18, 18, 0.88);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     z-index: 1000;
-    transition: var(--transition-normal);
+    transition: background var(--transition-normal), box-shadow var(--transition-normal);
     box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Light mode navbar override */
+body:not(.dark-mode) .navbar {
+    background: rgba(255, 255, 255, 0.88);
+    border-bottom: 1px solid rgba(255, 107, 53, 0.08);
+    box-shadow: 0 2px 20px rgba(255, 107, 53, 0.07);
 }
 
 /* fixed navbar ke niche content hide na ho */
@@ -3637,10 +3663,10 @@ body.dark-mode {
     --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Navbar Dark Mode Override */
+/* Navbar Dark Mode Override — matches the default .navbar */
 body.dark-mode .navbar {
-    background: rgba(30, 30, 30, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(18, 18, 18, 0.88);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 body.dark-mode .nav-menu {
