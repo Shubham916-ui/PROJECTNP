@@ -10,16 +10,16 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import cmdPortrait from '../assets/images/cmd_portrait.webp';
-import manishPortrait from '../assets/images/manish.webp';
-import mayankPortrait from '../assets/images/mayank.webp';
+import sandeepPortrait from '../assets/images/leadership/sandeep.webp';
+import manishPortrait from '../assets/images/leadership/manish.webp';
+import mayankPortrait from '../assets/images/leadership/mayank.webp';
 
 const leaders = [
     {
         name: "Sandeep Kumar Agrawal",
         designation: "Chairman & CEO",
         bio: "A visionary entrepreneur with decades of experience in manufacturing and global trade, leading the company with innovation, integrity, and a commitment to sustainable growth",
-        image: cmdPortrait,
+        image: sandeepPortrait,
         quote: "Visionary leadership and operational excellence shape our sustainable future."
     },
     {
