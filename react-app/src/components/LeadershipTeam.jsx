@@ -10,9 +10,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import cmdPortrait from '../assets/images/cmd_portrait.png';
-import ccoPortrait from '../assets/images/cco_portrait.png';
-import cfoPortrait from '../assets/images/cfo_portrait.png';
+import cmdPortrait from '../assets/images/cmd_portrait.webp';
+import manishPortrait from '../assets/images/manish.webp';
+import cfoPortrait from '../assets/images/cfo_portrait.webp';
 
 const leaders = [
     {
@@ -26,7 +26,7 @@ const leaders = [
         name: "Manish Garg",
         designation: "Chief Commercial Officer (CCO)",
         bio: "A seasoned industry leader with 20+ years of experience, driving business growth, strategic partnerships, and commercial excellence across the organization.",
-        image: ccoPortrait,
+        image: manishPortrait,
         quote: "Delivering unmatched commercial value and customer-centric growth worldwide."
     },
     {
