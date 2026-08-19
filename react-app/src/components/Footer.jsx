@@ -56,6 +56,17 @@ const Footer = () => {
                 </div>
                 <div className="footer-bottom">
                     <p>&copy; 2026 SHREE SHYAM POLYMERS PVT. LTD. All rights reserved.</p>
+                    <p className="developer-credit">
+                        Designed & Developed by{' '}
+                        <a 
+                            href="https://www.skvproductions.in/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="developer-link"
+                        >
+                            SKV Productions
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>

@@ -1212,8 +1212,34 @@ body {
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
     color: var(--text-light);
+    font-size: 0.92rem;
+}
+
+.developer-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.developer-link {
+    color: var(--primary-amber);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.developer-link:hover {
+    color: var(--primary-orange);
+    text-decoration: underline;
+    text-shadow: 0 0 10px rgba(255, 184, 0, 0.5);
 }
 
 /* ============================================
