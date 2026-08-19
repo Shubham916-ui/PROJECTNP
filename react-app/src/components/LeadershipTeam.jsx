@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 
 import cmdPortrait from '../assets/images/cmd_portrait.webp';
 import manishPortrait from '../assets/images/manish.webp';
-import cfoPortrait from '../assets/images/cfo_portrait.webp';
+import mayankPortrait from '../assets/images/mayank.webp';
 
 const leaders = [
     {
@@ -33,7 +33,7 @@ const leaders = [
         name: "Mayank Agrawal",
         designation: "Chief Financial Officer (CFO)",
         bio: "Mayank oversees the company's financial strategies, fiscal compliance, risk management, and capital structure to ensure long-term stability and sustainable growth.",
-        image: cfoPortrait,
+        image: mayankPortrait,
         quote: "Financial discipline and strategic capital planning are key to powering our industrial vision."
     }
 ];
