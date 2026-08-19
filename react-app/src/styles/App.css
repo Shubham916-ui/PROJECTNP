@@ -2733,12 +2733,25 @@ body.dark-mode .benefit-badge {
 }
 
 .contact-icon {
-    font-size: 2.5rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
 }
 
-.contact-method-icon {
-    flex-shrink: 0;
+.contact-page-icon,
+.contact-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+}
+
+body.dark-mode .contact-page-icon,
+body.dark-mode .contact-icon img {
+    filter: brightness(0) invert(1);
 }
 
 .contact-details h4,
@@ -2798,6 +2811,14 @@ body.dark-mode .benefit-badge {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.contact-info-wrapper h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
 }
 
 .contact-form-wrapper>p {
@@ -2829,6 +2850,7 @@ body.dark-mode .benefit-badge {
     border-radius: 10px;
     font-family: var(--font-primary);
     font-size: 1rem;
+    width: 100%;
     transition: var(--transition-fast);
 }
 
@@ -2843,6 +2865,11 @@ body.dark-mode .benefit-badge {
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
+}
+
+.contact-details {
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .btn-block {
@@ -2871,10 +2898,84 @@ body.dark-mode .benefit-badge {
     box-shadow: var(--shadow-md);
 }
 
+/* Responsive Breakpoints for Contact Page */
 @media (max-width: 968px) {
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 2.5rem 0 1rem;
+    }
+
+    .contact-form-card,
+    .contact-form-wrapper {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    .contact-form-card h3,
+    .contact-form-wrapper h2,
+    .contact-info-wrapper h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .contact-methods {
+        margin-bottom: 2rem;
+    }
+
+    .contact-method {
+        gap: 1rem;
+        padding: 1.2rem 0;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.85rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .map-section {
+        padding: 2.5rem 0;
+    }
+
+    .map-container {
+        height: 320px;
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-card,
+    .contact-form-wrapper {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+    }
+
+    .contact-form {
+        gap: 1.2rem;
+    }
+
+    .contact-method {
+        gap: 0.8rem;
+    }
+
+    .contact-details h4 {
+        font-size: 1.05rem;
+    }
+
+    .contact-details p,
+    .contact-details a {
+        font-size: 0.9rem;
+    }
+
+    .map-container {
+        height: 280px;
     }
 }
 
