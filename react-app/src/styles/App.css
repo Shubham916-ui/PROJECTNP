@@ -170,9 +170,9 @@ body {
     /* Adjusted for smaller navbar */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     body {
-        padding-top: 60px;
+        padding-top: 65px;
         /* Reduce padding for mobile navbar height */
     }
 }
@@ -275,7 +275,7 @@ body {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    /* overflow: hidden;  <-- REMOVED from here to fix padding leak */
+    white-space: nowrap;
 }
 
 /* Inner wrapper to hold both spans and mask the content */
@@ -283,15 +283,15 @@ body {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    /* <-- MOVED here to mask text correctly */
     line-height: 1.5;
-    /* Ensure consistent line height */
+    white-space: nowrap;
     transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.2, 1);
 }
 
 /* Main text (initially visible) */
 .nav-text-main {
     display: block;
+    white-space: nowrap;
     transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.2, 1);
 }
 
@@ -301,6 +301,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
+    white-space: nowrap;
     color: var(--primary-orange);
     transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.2, 1);
 }
@@ -316,8 +317,6 @@ body {
     transform: translateY(-100%);
 }
 
-/* Flexographic Printing Nav Link removed custom orange colors to match rest of navbar */
-
 /* Contact Button Styling */
 .nav-link.contact-btn {
     background: var(--gradient-primary);
@@ -330,6 +329,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
 }
 
 .nav-link.contact-btn:hover {
@@ -351,12 +351,38 @@ body {
     display: none;
 }
 
-@media (max-width: 768px) {
+/* Intermediate screens: 993px to 1180px - Keep desktop navbar sleek & compact */
+@media (min-width: 993px) and (max-width: 1180px) {
+    .nav-container {
+        padding: 0.5rem 1rem !important;
+        max-width: 98% !important;
+    }
+
+    .nav-menu {
+        gap: 1.1rem;
+    }
+
+    .nav-link {
+        font-size: 0.84rem;
+        letter-spacing: 0.2px;
+    }
+
     .nav-link.contact-btn {
-        margin-left: 0;
-        margin-top: 1rem;
-        width: 100%;
-        justify-content: center;
+        padding: 0.5rem 1.2rem;
+        font-size: 0.84rem;
+        margin-left: 0.25rem;
+    }
+
+    .logo img {
+        max-height: 48px;
+    }
+
+    .brand-name {
+        font-size: 1.05rem;
+    }
+
+    .brand-sub {
+        font-size: 0.58rem;
     }
 }
 
@@ -375,36 +401,29 @@ body {
     transition: var(--transition-normal);
 }
 
-/* Adjustments for short screens (iPhone 4 height ~480px) */
-@media (max-width: 768px) and (max-height: 550px) {
+/* Adjustments for short screens */
+@media (max-width: 992px) and (max-height: 550px) {
     .nav-menu {
         padding: 1.5rem 1.5rem !important;
-        /* Reduced padding */
         gap: 0.8rem !important;
-        /* Tighter gap */
         max-height: 95vh;
         justify-content: flex-start;
-        /* Ensure top alignment to avoid cutting off if tall */
     }
 
     .nav-link {
-        font-size: 1rem;
+        font-size: 0.95rem;
         padding: 0.25rem 0;
     }
 
     .nav-toggle-item {
         margin-top: 0.25rem;
-        /* Less margin */
     }
 
     .nav-link.contact-btn {
         margin-top: 0.5rem;
-        padding: 0.6rem 1.5rem;
-        /* Increased padding slightly */
+        padding: 0.55rem 1.2rem;
         background: var(--gradient-primary);
-        /* Ensure background is present */
         color: white !important;
-        /* Ensure text is white */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -414,18 +433,21 @@ body {
         color: white !important;
         opacity: 1 !important;
         visibility: visible !important;
-        font-size: 0.9rem;
-        /* Adjust font size to fit */
+        font-size: 0.85rem;
     }
 
     .logo img {
         max-height: 40px;
-        /* Smaller logo in menu if present */
     }
 }
 
-/* Mobile Menu Styles */
-@media (max-width: 768px) {
+/* Mobile & Tablet Menu Styles (<= 992px) */
+@media (max-width: 992px) {
+    .nav-container {
+        padding: 0.6rem 1.25rem !important;
+        max-width: 100% !important;
+    }
+
     .hamburger {
         display: flex;
         z-index: 1001;
@@ -433,7 +455,8 @@ body {
 
     /* Show mobile toggle button */
     .mobile-toggle-btn {
-        display: block;
+        display: flex;
+        align-items: center;
         margin-right: 0.5rem;
     }
 
@@ -445,23 +468,21 @@ body {
     .nav-menu {
         position: fixed !important;
         top: 0 !important;
-        right: -50% !important;
+        right: -100% !important;
         left: auto !important;
         /* Start off-screen to the right */
-        width: 50% !important;
-        /* Half width */
-        height: 100vh;
-        background: rgba(255, 255, 255, 0.85) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
+        width: min(320px, 85vw) !important;
+        height: 100vh !important;
+        background: rgba(255, 255, 255, 0.94) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
         flex-direction: column;
         align-items: flex-start;
         padding: 5rem 2rem 2rem;
-        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease-in-out;
+        box-shadow: -4px 0 25px rgba(0, 0, 0, 0.15);
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         margin-left: 0 !important;
-        /* Reset auto margin */
-        gap: 1.5rem;
+        gap: 1.25rem;
         z-index: 1020;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
@@ -483,7 +504,17 @@ body {
 
     .nav-link {
         width: 100%;
-        padding: 0.75rem 0;
+        padding: 0.6rem 0;
+        font-size: 1rem;
+    }
+
+    .nav-link.contact-btn {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        padding: 0.75rem 1.5rem;
     }
 
     /* Hamburger animation */
@@ -1322,32 +1353,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .nav-container {
-        padding: 0.75rem 1rem !important;
-        /* Reduced padding for mobile to push elements to edges */
-        max-width: 100% !important;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        flex-direction: column;
-        background: var(--bg-white);
-        width: 100%;
-        padding: 2rem;
-        box-shadow: var(--shadow-lg);
-        transition: var(--transition-normal);
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
     .hero-title {
         font-size: 2.5rem;
     }
@@ -1472,28 +1477,6 @@ body {
 
     .cta-content h2 {
         font-size: 2rem;
-    }
-
-    /* Navbar Mobile Fixes */
-    .nav-menu .nav-toggle-item {
-        margin: 0;
-        padding: 1rem 0;
-    }
-
-    .nav-link.contact-btn {
-        margin-left: 0;
-        width: auto;
-        display: flex;
-        /* Better for centering text */
-        justify-content: center;
-        align-items: center;
-        margin: 1rem auto 0;
-        /* Center button horizontally */
-        padding: 0.6rem 1.5rem;
-        box-sizing: border-box;
-        white-space: nowrap;
-        min-width: 120px;
-        text-align: center;
     }
 }
 
@@ -3674,12 +3657,12 @@ body.dark-mode .nav-menu {
     /* Ensure mobile menu bg is handled */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     body.dark-mode .nav-menu {
-        background: rgba(30, 30, 30, 0.85) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        /* Mobile menu dark background with blur */
+        background: rgba(22, 22, 24, 0.95) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
     }
 }
 
