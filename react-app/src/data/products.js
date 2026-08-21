@@ -67,7 +67,7 @@ export const products = [
         name: 'Polythene Bags',
         badge: 'Customizable',
         category: 'Packaging',
-        image: '/photos/polythene-bags.webp',
+        image: '/photos/polythene-bags.png',
         description: 'Versatile polythene bags available in LD, HM, and HDPE variants for retail, industrial, and daily storage needs.',
         features: [
             'Multiple density options (LDPE / HM-HDPE)',
@@ -88,7 +88,7 @@ export const products = [
         name: 'LD Pouch & Sheet',
         badge: 'Food Safe',
         category: 'Packaging',
-        image: '/photos/ld-pouches.webp',
+        image: '/photos/ld-pouches.png',
         description: 'Clear, food-grade LDPE pouches and packaging sheets providing superior moisture barrier and high transparency.',
         features: [
             'Crystal clear optical transparency',
@@ -193,7 +193,7 @@ export const products = [
         name: 'Delivery Pipe',
         badge: 'Heavy Duty',
         category: 'Agriculture',
-        image: '/photos/hdpe-pipes.webp',
+        image: '/photos/delivery-pipes.png',
         description: 'Flexible, high-pressure agricultural delivery pipes (Lapeta pipes) engineered for temporary water transport and field flood irrigation.',
         features: [
             'High burst pressure rating',
@@ -214,7 +214,7 @@ export const products = [
         name: 'PP Pouch',
         badge: 'High Clarity',
         category: 'Packaging',
-        image: '/photos/pp-shrink-film.png',
+        image: '/photos/pp-pouches.png',
         description: 'Ultra-clear Polypropylene (PP) pouches offering superior gloss, crisp feel, and exceptional display clarity for retail items.',
         features: [
             'High gloss and crystal clear optical clarity',
@@ -235,7 +235,7 @@ export const products = [
         name: 'HM Pouch',
         badge: 'High Strength',
         category: 'Packaging',
-        image: '/photos/printed-packaging-2.png',
+        image: '/photos/hm-pouch.png',
         description: 'High Molecular (HM-HDPE) pouches offering outstanding tensile strength, puncture resistance, and cost-effective lightweight packaging.',
         features: [
             'High tensile and load-bearing strength',
@@ -319,7 +319,7 @@ export const products = [
         name: 'PP Fabric Bag',
         badge: 'Heavy Duty',
         category: 'Packaging',
-        image: '/photos/agricultural-printed-bags.png',
+        image: '/photos/pp-fabric-bag.png',
         description: 'Robust woven Polypropylene (PP) fabric bags engineered for bulk packaging of food grains, animal feeds, and industrial materials.',
         features: [
             'High tensile woven PP fabric construction',

@@ -1,9 +1,5 @@
 import { timeline } from '../data/timeline';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import {
-    FaRecycle,
-    FaSolarPanel
-} from 'react-icons/fa';
 
 /* ══════════════════════════════
    MAIN COMPONENT
@@ -19,9 +15,6 @@ const About = () => {
 
             {/* 3. Our Journey Timeline */}
             <OurJourney />
-
-            {/* 4. Sustainable Growth */}
-            <SustainableGrowth />
         </div>
     );
 };
@@ -104,50 +97,5 @@ const JourneyItem = ({ year, title, description, index }) => {
     );
 };
 
-/* ── 4. Sustainable Growth ── */
-const SustainableGrowth = () => {
-    const ref = useScrollAnimation();
-    return (
-        <section
-            ref={ref}
-            className="about-sustainable scroll-animate translate-y"
-        >
-            <div className="about-section-header">
-                <span className="about-section-icon">🌿</span>
-                <h2 className="about-section-title">Sustainable Growth</h2>
-            </div>
-            <p className="about-sustainable-desc">
-                We believe in a greener future. Our manufacturing processes are optimised to
-                minimise carbon footprint.
-            </p>
-            <div className="about-sustain-cards">
-                <SustainCard
-                    icon={<FaRecycle />}
-                    label="Zero Waste"
-                    sublabel="Initiative"
-                    color="#4CAF50"
-                    bg="rgba(76,175,80,0.12)"
-                />
-                <SustainCard
-                    icon={<FaSolarPanel />}
-                    label="Solar Power"
-                    sublabel="100% Green Energy"
-                    color="#FFB800"
-                    bg="rgba(255,184,0,0.12)"
-                />
-            </div>
-        </section>
-    );
-};
-
-const SustainCard = ({ icon, label, sublabel, color, bg }) => (
-    <div className="sustain-card" style={{ background: bg }}>
-        <span className="sustain-icon" style={{ color }}>{icon}</span>
-        <div>
-            <div className="sustain-label">{label}</div>
-            <div className="sustain-sub">{sublabel}</div>
-        </div>
-    </div>
-);
-
 export default About;
+
