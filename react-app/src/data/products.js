@@ -253,48 +253,6 @@ export const products = [
     },
     {
         id: 13,
-        name: 'LD Fresh Jhola',
-        badge: '100% Virgin',
-        category: 'Packaging',
-        image: '/photos/printed-bags.png',
-        description: 'Premium quality carry bags (Jhola) crafted from 100% virgin LDPE, offering a smooth finish, soft touch, and high load capacity.',
-        features: [
-            'Made exclusively from 100% virgin LDPE',
-            'Smooth, glossy, and soft-touch feel',
-            'Strong punch handle / D-cut / W-cut designs',
-            'High tear and weight-bearing capacity',
-            'Custom multi-color brand logo printing'
-        ],
-        applications: [
-            'Fashion boutiques and branded retail stores',
-            'Supermarkets and shopping malls',
-            'Sweet shops, bakeries, and food retail',
-            'Exhibitions and corporate giveaways'
-        ]
-    },
-    {
-        id: 14,
-        name: 'LD Second Jhola',
-        badge: 'Economical',
-        category: 'Packaging',
-        image: '/photos/polythene-bags.png',
-        description: 'Durable, cost-effective recycled LDPE carry bags (Jhola) tailored for high-volume wholesale, mandi, and daily retail usage.',
-        features: [
-            'Sustainable recycled polymer formulation',
-            'High tensile strength and tear resistance',
-            'Heavy load handling capacity',
-            'Available in various vibrant colors and sizes',
-            'Economical bulk pricing'
-        ],
-        applications: [
-            'Wholesale fruit & vegetable mandis',
-            'Local grocery and provision stores',
-            'Hardware and general market packaging',
-            'Daily multi-purpose utility carriage'
-        ]
-    },
-    {
-        id: 15,
         name: 'Black / Transparent Sheet',
         badge: 'Multipurpose',
         category: 'Industrial',
@@ -315,7 +273,7 @@ export const products = [
         ]
     },
     {
-        id: 16,
+        id: 14,
         name: 'PP Fabric Bag',
         badge: 'Heavy Duty',
         category: 'Packaging',
